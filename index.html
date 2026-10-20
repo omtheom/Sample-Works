@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Legacy Codex — Mapel Firm</title>
+<meta name="description" content="A book and a documentary film of your parent's life, in their own words, preserved in three countries.">
+<script>
+  // Set the theme before first paint so there is no flash of the wrong colours.
+  (function () {
+    var theme;
+    try { theme = localStorage.getItem('theme'); } catch (e) {}
+    if (theme !== 'light' && theme !== 'dark') {
+      theme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    }
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER: close/menu button, name, theme switch -->
+<header class="site-header">
+  <button class="contents-toggle" type="button" aria-label="Hide contents" aria-expanded="true" aria-controls="contents">
+    <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+    <svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+  </button>
+  <div class="header-main">
+    <a href="#top" class="site-name">Mapel Firm</a>
+    <button class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Dark theme">
+      <span class="theme-switch-knob"></span>
+    </button>
+  </div>
+</header>
+
+<div class="page">
+
+  <!-- CONTENTS SIDEBAR -->
+  <nav class="contents" id="contents" aria-label="Contents">
+    <p class="contents-title">Contents</p>
+    <ul>
+      <li><a href="#filmmaking">The Filmmaking</a></li>
+      <li><a href="#penmanship">The Penmanship</a></li>
+      <li><a href="#book">The Book</a></li>
+      <li><a href="#preservation">The Preservation</a></li>
+      <li><a href="#investment">The Investment</a></li>
+    </ul>
+  </nav>
+
+  <main class="article" id="top">
+
+    <h1 class="article-title">Their Life, in a Book<br>and a Film</h1>
+    <p class="article-meta">Legacy Codex Project</p>
+
+    <!-- 1. LANDSCAPE VIDEO -->
+    <section class="section" id="filmmaking">
+      <h2>The Filmmaking</h2>
+      <figure class="media media-landscape">
+        <!-- Add the film's URL to the <source> below. The play button works once a source is set. -->
+        <video playsinline preload="none"
+               poster="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6acbe5a6bd6bb710ca4f72db.png">
+          <source src="" type="video/mp4">
+        </video>
+        <button class="play" type="button" aria-label="Play the film"><span></span></button>
+      </figure>
+      <p>Five sessions of four to five hours each, at the times and in the place that suit your father or mother. Between sessions, our crew quietly follows their day. The film then shows not only what they say, but the life they live.</p>
+    </section>
+
+    <!-- 2. TEXT -->
+    <section class="section" id="penmanship">
+      <h2>The Penmanship</h2>
+      <p>Every word in the book is theirs. We shape only the structure, the grammar and the flow, so it reads well on the page. The voice your family knows stays exactly as it is.</p>
+    </section>
+
+    <!-- 3. PORTRAIT CAROUSEL: two photos and a video -->
+    <section class="section" id="book">
+      <h2>The Book</h2>
+      <div class="carousel" aria-roledescription="carousel" aria-label="The Book">
+        <div class="carousel-track" tabindex="0">
+          <figure class="carousel-slide" aria-roledescription="slide" aria-label="1 of 3">
+            <img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6accfea904c496731f32f3e5.png" alt="A man reading a book" loading="lazy">
+          </figure>
+          <figure class="carousel-slide" aria-roledescription="slide" aria-label="2 of 3">
+            <img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6acbe5a64770fb500bf57a39.png" alt="A man in quiet thought, looking out of a car window" loading="lazy">
+          </figure>
+          <figure class="carousel-slide media" aria-roledescription="slide" aria-label="3 of 3">
+            <!-- Add the book film's URL to the <source> below. -->
+            <video playsinline preload="none"
+                   poster="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6acbe5a6bd6bb710ca4f72e5.png">
+              <source src="" type="video/mp4">
+            </video>
+            <button class="play" type="button" aria-label="Play the video"><span></span></button>
+          </figure>
+        </div>
+        <div class="carousel-controls">
+          <button class="carousel-arrow" type="button" data-dir="-1" aria-label="Previous slide">&#8592;</button>
+          <div class="carousel-dots" role="tablist" aria-label="Choose slide"></div>
+          <button class="carousel-arrow" type="button" data-dir="1" aria-label="Next slide">&#8594;</button>
+        </div>
+      </div>
+      <p>Two editions are made.</p>
+      <ul>
+        <li>The family edition is for sharing with relatives and friends, with your parent&rsquo;s portrait on the cover. It is printed on premium paper and bound in hardcover or by hand.</li>
+        <li>The archival edition is printed on museum-quality paper, made to last for generations.</li>
+      </ul>
+    </section>
+
+    <!-- 4. IMAGE -->
+    <section class="section" id="preservation">
+      <h2>The Preservation</h2>
+      <figure class="media media-landscape">
+        <img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6accfe53ed5644a05fd5bafb.png" alt="Checking the archival film through a lens" loading="lazy">
+      </figure>
+      <p>Their story is kept in three countries, so that it outlives us all. Your family receives a preservation certificate, and any member of the family can ask to see it at any time.</p>
+    </section>
+
+    <!-- PRICING -->
+    <section class="section" id="investment">
+      <h2>The Investment</h2>
+      <p>The quality of our service to you speaks for itself.</p>
+
+      <div class="price-card">
+        <p class="price-card-label">Legacy Codex</p>
+        <p class="price-card-price">$36,000</p>
+        <p class="price-card-note">One price for all of it. The book and the film are made as one work, not sold separately.</p>
+        <ul class="price-card-list">
+          <li>A documentary film of your parent&rsquo;s life, from five sessions and the days between</li>
+          <li>The book, in their own words, as a family edition and an archival edition</li>
+          <li>Preservation of the copies in three countries, with a preservation certificate</li>
+          <li>A family crest for the book and the film</li>
+          <li>A photobook of the whole process</li>
+        </ul>
+        <a class="price-card-cta" href="https://mapelfirm.com/application-form-page" target="_blank" rel="noopener noreferrer">Apply</a>
+      </div>
+
+      <h3 class="compare-title">What others charge for only a book or a film</h3>
+      <div class="compare-scroll" tabindex="0" role="region" aria-label="Price comparison, scrolls sideways">
+        <table class="compare">
+          <thead>
+            <tr>
+              <th scope="col"><span class="visually-hidden">Included</span></th>
+              <th scope="col" class="ours">Mapel Firm<span>Legacy Codex</span></th>
+              <th scope="col">LifeBook Memoirs<span>The Signature</span></th>
+              <th scope="col">MemoirGhostwriting<span>Friends and Family Memoir</span></th>
+              <th scope="col">MemoirGhostwriting<span>Family History Coffee Table Book</span></th>
+              <th scope="col">Sellers Easton<span>Life Story Interview</span></th>
+              <th scope="col">Sellers Easton<span>Life Story Book</span></th>
+              <th scope="col">Oren Siedler<span>Family Legacy Films</span></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="row-price">
+              <th scope="row">Price</th>
+              <td class="ours">$36,000</td>
+              <td>$42,000</td>
+              <td>$48,500</td>
+              <td>About $225,000</td>
+              <td>From $45,000</td>
+              <td>From $35,000 or $50,000</td>
+              <td>$2,100 to $15,000</td>
+            </tr>
+            <tr>
+              <th scope="row">Documentary film</th>
+              <td class="ours yes">Included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="yes">Included</td>
+              <td class="no">Not included</td>
+              <td class="yes">Included</td>
+            </tr>
+            <tr>
+              <th scope="row">Written book</th>
+              <td class="ours yes">Included</td>
+              <td class="yes">Included</td>
+              <td class="yes">Included</td>
+              <td class="yes">Included</td>
+              <td class="no">Not included</td>
+              <td class="yes">Included</td>
+              <td class="no">Not included</td>
+            </tr>
+            <tr>
+              <th scope="row">Book and film as one work, at one price</th>
+              <td class="ours yes">Included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+            </tr>
+            <tr>
+              <th scope="row">Preserved in archives in three countries</th>
+              <td class="ours yes">Included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+            </tr>
+            <tr>
+              <th scope="row">Preservation certificate</th>
+              <td class="ours yes">Included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+            </tr>
+            <tr>
+              <th scope="row">Family crest for the book and film</th>
+              <td class="ours yes">Included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+            </tr>
+            <tr>
+              <th scope="row">Photobook of the whole process</th>
+              <td class="ours yes">Included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+              <td class="no">Not included</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <p class="compare-notes">
+        &#10003; included &nbsp;&middot;&nbsp; &mdash; not in the provider&rsquo;s published package.
+        Other providers&rsquo; prices are taken from their own pricing pages, checked in October 2026, and can change:
+        <a href="https://www.lifebookmemoirs.com/pricing" target="_blank" rel="noopener noreferrer">LifeBook Memoirs</a>,
+        <a href="https://www.memoirghostwriting.com/services" target="_blank" rel="noopener noreferrer">MemoirGhostwriting.com</a>,
+        <a href="https://www.sellerseaston.com/frequently-asked-questions" target="_blank" rel="noopener noreferrer">Sellers Easton</a>,
+        <a href="https://www.orensiedler.com/family-legacy/" target="_blank" rel="noopener noreferrer">Oren Siedler</a>.
+        A book and a film from Sellers Easton together start at $80,000. LifeBook Memoirs shows prices with a $ sign but does not name the currency.
+      </p>
+    </section>
+
+  </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
