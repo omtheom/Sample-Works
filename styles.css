@@ -699,13 +699,17 @@ nav.is-scrolled {
 }
 
 /* The table may use the right-hand margin too */
-.lc-pricing-head > .lc-compare-scroll {
+.lc-pricing-head > .lc-compare-scroll,
+.lc-pricing-head > .lc-compare-notes,
+.lc-pricing-head > .lc-apply {
     grid-column: 2 / 4;
 }
 
 /* On laptop widths it takes the full page width so the price column stays in view */
 @media (max-width: 1500px) {
-    .lc-pricing-head > .lc-compare-scroll {
+    .lc-pricing-head > .lc-compare-scroll,
+    .lc-pricing-head > .lc-compare-notes,
+    .lc-pricing-head > .lc-apply {
         grid-column: 1 / 4;
     }
 }
@@ -815,8 +819,12 @@ nav.is-scrolled {
     display: none;
 }
 
+.lc-pricing-head > .lc-compare-notes {
+    max-width: 60rem;
+    margin: 2.5rem 0 0;
+}
+
 .lc-compare-notes {
-    margin-top: 1.25rem;
     color: var(--lc-muted);
     font-size: .8em;
     line-height: 1.65;
@@ -931,7 +939,9 @@ nav.is-scrolled {
         padding-top: 3.5rem;
     }
 
-    .lc-pricing-head > .lc-compare-scroll {
+    .lc-pricing-head > .lc-compare-scroll,
+    .lc-pricing-head > .lc-compare-notes,
+    .lc-pricing-head > .lc-apply {
         grid-column: 1;
     }
 
