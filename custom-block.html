@@ -1,0 +1,392 @@
+<!-- ============================================================
+     MAPEL FIRM — Legacy Codex landing page
+     HTML + JS block for GoHighLevel
+     Paste this entire file into a Custom Code / Custom HTML element.
+     The matching CSS lives in styles.css — paste that into
+     Page Settings → Custom CSS first.
+     ============================================================ -->
+
+<!-- Google Fonts (safe to leave here; GHL will dedupe if already loaded) -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+
+<!-- NAVIGATION (same as mapelfirm.com, plus the theme switch) -->
+<nav id="siteNav">
+  <a href="https://mapelfirm.com" class="nav-logo" style="display:inline-flex;align-items:center;gap:.6rem;flex-wrap:nowrap;">
+    <img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/69ee1028717d5dd4e1182e67.png" alt="" class="nav-logo-img" aria-hidden="true" style="height:32px;width:auto;max-width:110px;display:inline-block;vertical-align:middle;object-fit:contain;flex-shrink:0;">
+    <span class="nav-logo-text">MAPEL FIRM</span>
+  </a>
+  <ul class="nav-links">
+    <li><a href="https://mapelfirm.com/#legacy">Legacy</a></li>
+    <li><a href="https://mapelfirm.com/#method">Method</a></li>
+    <li><a href="https://mapelfirm.com/#preservation">Preservation</a></li>
+    <li><a href="https://mapelfirm.com/#founder">About</a></li>
+  </ul>
+  <div class="nav-right">
+    <button class="theme-switch" type="button" role="switch" aria-checked="false" aria-label="Dark theme">
+      <span class="theme-switch-knob"></span>
+    </button>
+    <a href="https://mapelfirm.com/application-form-page" target="_blank" rel="noopener noreferrer" class="nav-cta">Apply Now</a>
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+  <ul>
+    <li><a href="https://mapelfirm.com/#legacy">Legacy</a></li>
+    <li><a href="https://mapelfirm.com/#method">Method</a></li>
+    <li><a href="https://mapelfirm.com/#preservation">Preservation</a></li>
+    <li><a href="https://mapelfirm.com/#founder">About</a></li>
+    <li><a href="https://mapelfirm.com/application-form-page" target="_blank" rel="noopener noreferrer" class="mobile-cta">Apply Now</a></li>
+  </ul>
+</div>
+
+<div class="lc-page" id="lcTop">
+
+  <div class="lc-layout">
+
+    <!-- CONTENTS SIDEBAR -->
+    <aside class="lc-contents" aria-label="Contents">
+      <p class="lc-contents-title">Contents</p>
+      <ul>
+        <li><a href="#filmmaking">The Filmmaking</a></li>
+        <li><a href="#penmanship">The Penmanship</a></li>
+        <li><a href="#book">The Book</a></li>
+        <li><a href="#preservation-section">The Preservation</a></li>
+        <li><a href="#investment">The Investment</a></li>
+      </ul>
+    </aside>
+
+    <main class="lc-article">
+
+      <h1 class="lc-title">Their Life, in a Book <br>and a Film</h1>
+      <p class="lc-meta">Legacy Codex Project</p>
+
+      <!-- 1. LANDSCAPE VIDEO (placeholder until the film is ready) -->
+      <section class="lc-section" id="filmmaking">
+        <h2>The Filmmaking</h2>
+        <div class="lc-frame lc-frame-landscape">
+          <span class="lc-play" aria-hidden="true"></span>
+        </div>
+        <p>Five sessions of four to five hours each, at the times and in the place that suit your father or mother. Between sessions, our crew quietly follows their day. The film then shows not only what they say, but the life they live.</p>
+      </section>
+
+      <!-- 2. TEXT -->
+      <section class="lc-section" id="penmanship">
+        <h2>The Penmanship</h2>
+        <p>Every word in the book is theirs. We shape only the structure, the grammar and the flow, so it reads well on the page. The voice your family knows stays exactly as it is.</p>
+      </section>
+
+      <!-- 3. PORTRAIT CAROUSEL: two photos and a video (placeholders) -->
+      <section class="lc-section" id="book">
+        <h2>The Book</h2>
+        <div class="lc-carousel" aria-roledescription="carousel" aria-label="The Book">
+          <div class="lc-carousel-track" tabindex="0">
+            <div class="lc-carousel-slide lc-frame" aria-roledescription="slide" aria-label="Photo, 1 of 3"></div>
+            <div class="lc-carousel-slide lc-frame" aria-roledescription="slide" aria-label="Photo, 2 of 3"></div>
+            <div class="lc-carousel-slide lc-frame" aria-roledescription="slide" aria-label="Video, 3 of 3">
+              <span class="lc-play" aria-hidden="true"></span>
+            </div>
+          </div>
+          <div class="lc-carousel-controls">
+            <button class="lc-carousel-arrow" type="button" data-dir="-1" aria-label="Previous slide">&#8592;</button>
+            <div class="lc-carousel-dots" role="tablist" aria-label="Choose slide"></div>
+            <button class="lc-carousel-arrow" type="button" data-dir="1" aria-label="Next slide">&#8594;</button>
+          </div>
+        </div>
+        <p>Two editions are made.</p>
+        <ul>
+          <li>The family edition is for sharing with relatives and friends, with your parent&rsquo;s portrait on the cover. It is printed on premium paper and bound in hardcover or by hand.</li>
+          <li>The archival edition is printed on museum-quality paper, made to last for generations.</li>
+        </ul>
+      </section>
+
+      <!-- 4. IMAGE (placeholder) -->
+      <section class="lc-section" id="preservation-section">
+        <h2>The Preservation</h2>
+        <div class="lc-frame lc-frame-landscape"></div>
+        <p>Their story is kept in three countries, so that it outlives us all. Your family receives a preservation certificate, and any member of the family can ask to see it at any time.</p>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- PRICING: our package and theirs, side by side -->
+  <section class="lc-pricing" id="investment">
+    <div class="lc-pricing-head">
+      <h2>The Investment</h2>
+      <p>The quality of our service to you speaks for itself.</p>
+    </div>
+
+    <div class="lc-compare-scroll" tabindex="0" role="region" aria-label="Price comparison. Scrolls sideways on small screens.">
+      <table class="lc-compare">
+        <thead>
+          <tr>
+            <th scope="col">Provider</th>
+            <th scope="col">Price</th>
+            <th scope="col">What the price covers</th>
+            <th scope="col" class="lc-col-tick">Documentary film</th>
+            <th scope="col" class="lc-col-tick">Book</th>
+            <th scope="col" class="lc-col-tick">Book and film together</th>
+            <th scope="col" class="lc-col-tick">Kept in three countries</th>
+            <th scope="col" class="lc-col-tick">Preservation certificate</th>
+            <th scope="col" class="lc-col-tick">Family crest</th>
+            <th scope="col" class="lc-col-tick">Photobook of the process</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="lc-ours">
+            <th scope="row">Mapel Firm<span>Legacy Codex</span></th>
+            <td class="lc-price">$36,000</td>
+            <td class="lc-covers">The documentary film and the book, made as one work. Family and archival editions. Preservation of the copies in three countries, with a certificate. A family crest for the book and film, and a photobook of the whole process.</td>
+            <td class="lc-yes">Included</td>
+            <td class="lc-yes">Included</td>
+            <td class="lc-yes">Included</td>
+            <td class="lc-yes">Included</td>
+            <td class="lc-yes">Included</td>
+            <td class="lc-yes">Included</td>
+            <td class="lc-yes">Included</td>
+          </tr>
+          <tr>
+            <th scope="row">LifeBook Memoirs<span>The Signature</span></th>
+            <td class="lc-price">$42,000</td>
+            <td class="lc-covers"><strong>Book only:</strong> up to 300 pages and 75,000 words, up to 200 photos, 14 interviews, 24 hardback copies, ten 2-hour audio recordings, one embossed leather-bound copy.</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-yes">Included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+          </tr>
+          <tr>
+            <th scope="row">MemoirGhostwriting.com<span>Friends and Family Memoir</span></th>
+            <td class="lc-price">$48,500</td>
+            <td class="lc-covers"><strong>Book only:</strong> up to 60,000 words, written over 7 to 8 months. Couples edition $55,000.</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-yes">Included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+          </tr>
+          <tr>
+            <th scope="row">MemoirGhostwriting.com<span>Family History Coffee Table Book</span></th>
+            <td class="lc-price">About $225,000</td>
+            <td class="lc-covers"><strong>Book only:</strong> a family history coffee table book, typically about two years to complete.</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-yes">Included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+          </tr>
+          <tr>
+            <th scope="row">Sellers Easton<span>Life Story Interview</span></th>
+            <td class="lc-price">From $45,000</td>
+            <td class="lc-covers"><strong>Film only:</strong> interviews of 90 minutes to 2 hours each, final film from 20 minutes up to 2 hours.</td>
+            <td class="lc-yes">Included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+          </tr>
+          <tr>
+            <th scope="row">Sellers Easton<span>Life Story Book</span></th>
+            <td class="lc-price">From $35,000 or $50,000</td>
+            <td class="lc-covers"><strong>Book only:</strong> 10 to 12 hours of interviews for a book of 100 pages or more. Their page gives both figures.</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-yes">Included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+          </tr>
+          <tr>
+            <th scope="row">Oren Siedler<span>Family Legacy Films</span></th>
+            <td class="lc-price">$2,100 to $15,000</td>
+            <td class="lc-covers"><strong>Film only:</strong> short films of 4 to 40 minutes, with one to three interviews depending on the option.</td>
+            <td class="lc-yes">Included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+            <td class="lc-no">Not included</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p class="lc-compare-notes">
+      &#10003; included &nbsp;&middot;&nbsp; &mdash; not in the provider&rsquo;s published package.
+      Prices are taken from each provider&rsquo;s own pricing page, checked in October 2026, and can change:
+      <a href="https://www.lifebookmemoirs.com/pricing" target="_blank" rel="noopener noreferrer">LifeBook Memoirs</a>,
+      <a href="https://www.memoirghostwriting.com/services" target="_blank" rel="noopener noreferrer">MemoirGhostwriting.com</a>,
+      <a href="https://www.sellerseaston.com/frequently-asked-questions" target="_blank" rel="noopener noreferrer">Sellers Easton</a>,
+      <a href="https://www.orensiedler.com/family-legacy/" target="_blank" rel="noopener noreferrer">Oren Siedler</a>.
+      LifeBook Memoirs shows prices with a $ sign but does not name the currency. None of these prices includes deposit in a national or international archive.
+    </p>
+
+    <a class="lc-apply" href="https://mapelfirm.com/application-form-page" target="_blank" rel="noopener noreferrer">Apply Now</a>
+  </section>
+
+</div>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var body = document.body;
+
+  // ─── Theme switch (off-white by default, choice remembered) ───
+  var themeSwitch = document.querySelector('.theme-switch');
+
+  function applyTheme(theme) {
+    root.setAttribute('data-lc-theme', theme);
+    if (themeSwitch) themeSwitch.setAttribute('aria-checked', theme === 'dark' ? 'true' : 'false');
+  }
+
+  var saved = null;
+  try { saved = localStorage.getItem('lc-theme'); } catch (e) {}
+  applyTheme(saved === 'dark' ? 'dark' : 'light');
+
+  if (themeSwitch) {
+    themeSwitch.addEventListener('click', function () {
+      var next = root.getAttribute('data-lc-theme') === 'dark' ? 'light' : 'dark';
+      applyTheme(next);
+      try { localStorage.setItem('lc-theme', next); } catch (e) {}
+    });
+  }
+
+  // ─── Nav background on scroll ──────────────────────────
+  var nav = document.getElementById('siteNav');
+  function onScroll() {
+    if (nav) nav.classList.toggle('is-scrolled', window.scrollY > 50);
+  }
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  // ─── Mobile menu toggle ────────────────────────────────
+  var toggle = document.querySelector('.nav-toggle');
+  var menu   = document.getElementById('mobileMenu');
+
+  function closeMenu() {
+    if (!toggle || !menu) return;
+    toggle.setAttribute('aria-expanded', 'false');
+    menu.classList.remove('is-open');
+    menu.setAttribute('aria-hidden', 'true');
+    body.classList.remove('menu-open');
+  }
+
+  function openMenu() {
+    if (!toggle || !menu) return;
+    toggle.setAttribute('aria-expanded', 'true');
+    menu.classList.add('is-open');
+    menu.setAttribute('aria-hidden', 'false');
+    body.classList.add('menu-open');
+  }
+
+  if (toggle && menu) {
+    toggle.addEventListener('click', function () {
+      var isOpen = toggle.getAttribute('aria-expanded') === 'true';
+      isOpen ? closeMenu() : openMenu();
+    });
+    menu.querySelectorAll('a').forEach(function (a) {
+      a.addEventListener('click', closeMenu);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeMenu();
+    });
+    window.addEventListener('resize', function () {
+      if (window.innerWidth > 900) closeMenu();
+    });
+  }
+
+  // ─── Contents: scroll to a section below the fixed nav ───
+  var links = Array.prototype.slice.call(document.querySelectorAll('.lc-contents a'));
+
+  links.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var target = document.getElementById(a.getAttribute('href').slice(1));
+      if (!target) return;
+      e.preventDefault();
+      var offset = (nav ? nav.offsetHeight : 0) + 24;
+      window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+    });
+  });
+
+  // Darken the contents entry for the section being read
+  if ('IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        links.forEach(function (a) {
+          a.classList.toggle('is-active', a.getAttribute('href') === '#' + entry.target.id);
+        });
+      });
+    }, { rootMargin: '-30% 0px -60% 0px' });
+    links.forEach(function (a) {
+      var s = document.getElementById(a.getAttribute('href').slice(1));
+      if (s) observer.observe(s);
+    });
+  }
+
+  // ─── Portrait carousel ─────────────────────────────────
+  document.querySelectorAll('.lc-carousel').forEach(function (carousel) {
+    var track = carousel.querySelector('.lc-carousel-track');
+    var slides = Array.prototype.slice.call(track.children);
+    var dotsWrap = carousel.querySelector('.lc-carousel-dots');
+    var prev = carousel.querySelector('[data-dir="-1"]');
+    var next = carousel.querySelector('[data-dir="1"]');
+    var current = 0;
+
+    var dots = slides.map(function (slide, i) {
+      var dot = document.createElement('button');
+      dot.type = 'button';
+      dot.className = 'lc-carousel-dot';
+      dot.setAttribute('role', 'tab');
+      dot.setAttribute('aria-label', 'Slide ' + (i + 1));
+      dot.addEventListener('click', function () { goTo(i); });
+      dotsWrap.appendChild(dot);
+      return dot;
+    });
+
+    function goTo(i) {
+      i = Math.max(0, Math.min(slides.length - 1, i));
+      track.scrollTo({ left: i * track.clientWidth, behavior: 'smooth' });
+    }
+
+    function update() {
+      current = Math.round(track.scrollLeft / track.clientWidth);
+      dots.forEach(function (d, j) { d.setAttribute('aria-selected', j === current ? 'true' : 'false'); });
+      prev.disabled = current === 0;
+      next.disabled = current === slides.length - 1;
+    }
+
+    prev.addEventListener('click', function () { goTo(current - 1); });
+    next.addEventListener('click', function () { goTo(current + 1); });
+    track.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft') { e.preventDefault(); goTo(current - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); goTo(current + 1); }
+    });
+
+    var ticking = false;
+    track.addEventListener('scroll', function () {
+      if (ticking) return;
+      ticking = true;
+      requestAnimationFrame(function () { update(); ticking = false; });
+    });
+    window.addEventListener('resize', update);
+    update();
+  });
+})();
+</script>

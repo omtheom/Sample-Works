@@ -1,29 +1,29 @@
-# Legacy Codex · Landing Page
+# Mapel Firm — Legacy Codex Landing Page
 
-A single landing page for the Legacy Codex book and film, laid out like an essay page: a sticky contents sidebar, one reading column, and an off-white / black theme switch in the header.
+Same setup as the main site in Legacy-Codex: one CSS file and one HTML block for GoHighLevel.
 
-| File | What it is |
-|------|------------|
-| `index.html` | Page markup. Open it in a browser to preview. |
-| `styles.css` | All styles, both themes, and the phone layout (under 900px). |
-| `script.js` | Theme switch, contents toggle, section highlighting, video play buttons and the carousel. |
+| File | What it is | Where it goes in GoHighLevel |
+|------|------------|------------------------------|
+| `styles.css` | All styles, both themes, phone layout | **Page Settings → Custom CSS**. Paste the whole file. |
+| `custom-block.html` | Nav, page content and the script (theme switch, menu, contents, carousel) | A **Custom Code / Custom HTML** element. Paste the whole file. |
+| `index.html` | Local preview, generated from `custom-block.html` by `python3 build.py` | Not used in GHL. |
 
-## Sections
+## Paste order in GoHighLevel
 
-1. **The Filmmaking**: landscape (16:9) video.
-2. **The Penmanship**: text.
-3. **The Book**: portrait (4:5) carousel with two photos and a video.
-4. **The Preservation**: landscape image.
-5. **The Investment**: the $36,000 price card and a comparison table against published competitor prices.
+1. Paste `styles.css` into the page's Custom CSS.
+2. Add one Custom Code element and paste `custom-block.html` into it.
+3. Set that section's padding to 0 so the page colour reaches the edges.
+4. Publish and preview.
 
-## Adding the videos
+## Page
 
-Each video has an empty `<source src="">` in `index.html`. Put the MP4 URL there. The play button stays inactive until a source is set.
+- Nav: the same logo, links, Apply Now button and phone menu as mapelfirm.com, plus the theme switch. Links go to the sections on mapelfirm.com.
+- Theme: off-white by default. The switch changes to black and the choice is remembered.
+- Sections: The Filmmaking (landscape video frame), The Penmanship (text), The Book (portrait carousel: two photo frames and one video frame), The Preservation (landscape image frame).
+- The Investment: one table with our package as the first row and six published competitor packages below it, each with its price, what that price covers, and ticks for each of our deliverables.
 
-## Theme
-
-The page follows the visitor's system setting on first visit. The header switch changes it and the choice is remembered in the browser.
+The photo and video frames are empty placeholders until the media is ready.
 
 ## Competitor prices
 
-Taken from each provider's own pricing page, checked October 2026. Update the table in `index.html` if they change.
+From each provider's own pricing page, checked October 2026. Update the table rows in `custom-block.html` if they change, then run `python3 build.py`.
