@@ -20,7 +20,7 @@ Same setup as the main site in Legacy-Codex: one CSS file and one HTML block for
 - Nav: the same logo, links, Apply Now button and phone menu as mapelfirm.com, plus the theme switch. Links go to the sections on mapelfirm.com.
 - Theme: off-white by default. The switch changes to black and the choice is remembered.
 - Sections: The Filmmaking (landscape video frame), The Penmanship (text), The Book (portrait carousel: two photo frames and one video frame), The Preservation (landscape image frame).
-- The Investment: one table with our package as the first row and six published competitor packages below it, each with its price, what that price covers, and ticks for each of our deliverables.
+- The Investment: one table with Mapel Firm as the first row and four competitor packages below it. Each row has a tick or dash for every deliverable, and the price in the last column.
 
 The photo and video frames are empty placeholders until the media is ready.
 

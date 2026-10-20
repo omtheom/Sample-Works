@@ -627,13 +627,25 @@ nav.is-scrolled {
     grid-column: 2;
 }
 
-.lc-pricing-head {
-    margin-bottom: 2.5rem;
+.lc-pricing-head > .lc-compare-scroll,
+.lc-pricing-head > .lc-compare-notes {
+    max-width: none;
+}
+
+/* The table may use the right-hand margin too */
+.lc-pricing-head > .lc-compare-scroll {
+    grid-column: 2 / 4;
+}
+
+/* On laptop widths it takes the full page width so the price column stays in view */
+@media (max-width: 1500px) {
+    .lc-pricing-head > .lc-compare-scroll {
+        grid-column: 1 / 4;
+    }
 }
 
 .lc-compare-scroll {
-    max-width: 88rem;
-    margin: 0 auto;
+    margin-top: 1.5rem;
     overflow-x: auto;
     border-top: 1px solid var(--lc-text);
     -webkit-overflow-scrolling: touch;
@@ -641,18 +653,18 @@ nav.is-scrolled {
 
 .lc-compare {
     width: 100%;
-    min-width: 72rem;
+    min-width: 50rem;
     border-collapse: collapse;
     font-size: .8em;
-    line-height: 1.5;
+    line-height: 1.35;
 }
 
 .lc-compare th,
 .lc-compare td {
-    padding: 1.1rem .8rem;
+    padding: 1.15rem .55rem;
     border-bottom: 1px solid var(--lc-line);
-    text-align: left;
-    vertical-align: top;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .lc-compare thead th {
@@ -661,37 +673,31 @@ nav.is-scrolled {
     color: var(--lc-text);
 }
 
-.lc-compare .lc-col-tick,
-.lc-compare .lc-yes,
-.lc-compare .lc-no {
-    width: 5.75rem;
-    text-align: center;
+.lc-compare th:first-child {
+    text-align: left;
 }
 
 .lc-compare tbody th {
-    width: 13rem;
+    min-width: 11rem;
     font-weight: 600;
 }
 
 .lc-compare tbody th span {
     display: block;
-    margin-top: .15rem;
+    margin-top: .2rem;
     color: var(--lc-muted);
     font-weight: 400;
 }
 
+/* Price closes each row */
+.lc-compare .lc-col-price,
 .lc-compare .lc-price {
-    width: 9rem;
-    font-weight: 600;
+    padding-left: 1.5rem;
+    text-align: right;
+    white-space: nowrap;
 }
 
-.lc-compare .lc-covers {
-    min-width: 18rem;
-    color: var(--lc-muted);
-}
-
-.lc-compare .lc-covers strong {
-    color: var(--lc-text);
+.lc-compare .lc-price {
     font-weight: 600;
 }
 
@@ -700,7 +706,7 @@ nav.is-scrolled {
     position: sticky;
     left: 0;
     z-index: 1;
-    padding-left: .8rem;
+    padding-left: .75rem;
     background: var(--lc-bg);
     transition: background-color .3s ease;
 }
@@ -712,12 +718,7 @@ nav.is-scrolled {
 }
 
 .lc-compare .lc-ours .lc-price {
-    font-size: 1.35em;
-    line-height: 1.2;
-}
-
-.lc-compare .lc-ours .lc-covers {
-    color: var(--lc-text);
+    font-size: 1.3em;
 }
 
 /* Ticks and dashes drawn over a screen-reader label */
@@ -730,7 +731,7 @@ nav.is-scrolled {
 .lc-compare td.lc-yes::after,
 .lc-compare td.lc-no::after {
     font-size: 1.1rem;
-    line-height: 1.5;
+    line-height: 1;
 }
 
 .lc-compare td.lc-yes::after {
@@ -744,17 +745,20 @@ nav.is-scrolled {
     color: var(--lc-faint);
 }
 
+.lc-compare-hint {
+    display: none;
+}
+
 .lc-compare-notes {
-    max-width: 88rem;
-    margin: 1.25rem auto 0;
+    margin-top: 1.25rem;
     color: var(--lc-muted);
     font-size: .8em;
     line-height: 1.65;
 }
 
 .lc-page .lc-apply {
-    display: table;
-    margin: 3rem auto 0;
+    justify-self: start;
+    margin-top: 2.5rem;
     padding: .8rem 2.2rem;
     background: var(--ink);
     color: var(--paper);
@@ -861,9 +865,19 @@ nav.is-scrolled {
         padding-top: 3.5rem;
     }
 
+    .lc-pricing-head > .lc-compare-scroll {
+        grid-column: 1;
+    }
+
+    .lc-pricing-head > .lc-compare-hint {
+        display: block;
+        margin: 1rem 0 0;
+        color: var(--lc-muted);
+        font-size: .8em;
+    }
+
     .lc-compare tbody th {
-        width: 9.5rem;
-        min-width: 9.5rem;
+        min-width: 9rem;
     }
 }
 
