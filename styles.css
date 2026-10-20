@@ -693,102 +693,81 @@ nav.is-scrolled {
     grid-column: 2;
 }
 
-.lc-pricing-head > .lc-compare-scroll,
-.lc-pricing-head > .lc-compare-notes {
-    max-width: none;
-}
-
-/* The table may use the right-hand margin too */
-.lc-pricing-head > .lc-compare-scroll,
-.lc-pricing-head > .lc-compare-notes,
-.lc-pricing-head > .lc-apply {
-    grid-column: 2 / 4;
-}
-
-/* On laptop widths it takes the full page width so the price column stays in view */
-@media (max-width: 1500px) {
-    .lc-pricing-head > .lc-compare-scroll,
-    .lc-pricing-head > .lc-compare-notes,
-    .lc-pricing-head > .lc-apply {
-        grid-column: 1 / 4;
-    }
+/* Deliverables run down the left, providers across, Mapel Firm last; the price closes the table */
+.lc-pricing-head > .lc-compare-scroll {
+    max-width: 56rem;
 }
 
 .lc-compare-scroll {
     margin-top: 1.5rem;
     overflow-x: auto;
     border-top: 1px solid var(--lc-text);
-    -webkit-overflow-scrolling: touch;
 }
 
 .lc-compare {
     width: 100%;
-    min-width: 50rem;
     border-collapse: collapse;
+    table-layout: fixed;
     font-size: .8em;
     line-height: 1.35;
 }
 
 .lc-compare th,
 .lc-compare td {
-    padding: 1.15rem .55rem;
+    padding: 1rem .6rem;
     border-bottom: 1px solid var(--lc-line);
     text-align: center;
     vertical-align: middle;
 }
 
-.lc-compare thead th {
-    font-weight: 600;
-    vertical-align: bottom;
+/* Deliverable labels */
+.lc-compare thead td,
+.lc-compare tbody th {
+    width: 34%;
+    padding-left: 0;
+    text-align: left;
+    font-weight: 400;
     color: var(--lc-text);
 }
 
-.lc-compare th:first-child {
-    text-align: left;
-}
-
-.lc-compare tbody th {
-    min-width: 11rem;
+/* Provider names */
+.lc-compare thead th {
+    vertical-align: bottom;
     font-weight: 600;
+    color: var(--lc-text);
+    -webkit-hyphens: manual;
+    hyphens: manual;
 }
 
-.lc-compare tbody th span {
+.lc-compare thead th span {
     display: block;
-    margin-top: .2rem;
+    margin-top: .25rem;
     color: var(--lc-muted);
     font-weight: 400;
+    font-size: .9em;
 }
 
-/* Price closes each row */
-.lc-compare .lc-col-price,
-.lc-compare .lc-price {
-    padding-left: 1.5rem;
-    text-align: right;
-    white-space: nowrap;
-}
-
-.lc-compare .lc-price {
-    font-weight: 600;
-}
-
-/* Keep the provider column in view while the table scrolls sideways */
-.lc-compare th:first-child {
-    position: sticky;
-    left: 0;
-    z-index: 1;
-    padding-left: .75rem;
-    background: var(--lc-bg);
-    transition: background-color .3s ease;
-}
-
-/* Our row stands out */
-.lc-compare .lc-ours th,
-.lc-compare .lc-ours td {
+/* Our column stands out */
+.lc-compare .lc-ours {
     background: var(--lc-highlight);
 }
 
-.lc-compare .lc-ours .lc-price {
-    font-size: 1.3em;
+/* Price row: the last thing read */
+.lc-compare .lc-price-row th,
+.lc-compare .lc-price-row td {
+    padding-top: 1.25rem;
+    padding-bottom: 1.25rem;
+    border-bottom: 1px solid var(--lc-text);
+    font-weight: 600;
+}
+
+.lc-compare .lc-price-row td {
+    color: var(--lc-muted);
+}
+
+.lc-compare .lc-price-row td.lc-ours {
+    color: var(--lc-text);
+    font-size: 1.25em;
 }
 
 /* Ticks and dashes drawn over a screen-reader label */
@@ -813,10 +792,6 @@ nav.is-scrolled {
 .lc-compare td.lc-no::after {
     content: "\2014";
     color: var(--lc-faint);
-}
-
-.lc-compare-hint {
-    display: none;
 }
 
 .lc-pricing-head > .lc-compare-notes {
@@ -939,21 +914,23 @@ nav.is-scrolled {
         padding-top: 3.5rem;
     }
 
-    .lc-pricing-head > .lc-compare-scroll,
-    .lc-pricing-head > .lc-compare-notes,
-    .lc-pricing-head > .lc-apply {
-        grid-column: 1;
+    .lc-compare {
+        font-size: .72em;
     }
 
-    .lc-pricing-head > .lc-compare-hint {
-        display: block;
-        margin: 1rem 0 0;
-        color: var(--lc-muted);
-        font-size: .8em;
+    .lc-compare th,
+    .lc-compare td {
+        padding: .85rem .3rem;
     }
 
+    .lc-compare thead td,
     .lc-compare tbody th {
-        min-width: 9rem;
+        width: 30%;
+        padding-left: 0;
+    }
+
+    .lc-compare thead th span {
+        font-size: .85em;
     }
 }
 
@@ -969,6 +946,17 @@ nav.is-scrolled {
 
     .mobile-menu a {
         font-size: 1.2rem;
+    }
+
+    .lc-compare th,
+    .lc-compare td {
+        padding-left: .15rem;
+        padding-right: .15rem;
+    }
+
+    .lc-compare thead td,
+    .lc-compare tbody th {
+        width: 27%;
     }
 }
 
