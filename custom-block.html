@@ -1,5 +1,5 @@
 <!-- ============================================================
-     MAPEL FIRM — Legacy Codex landing page
+     MAPEL FIRM — Family Legacy landing page
      HTML + JS block for GoHighLevel
      Paste this entire file into a Custom Code / Custom HTML element.
      The matching CSS lives in styles.css — paste that into
@@ -9,7 +9,7 @@
 <!-- Google Fonts (safe to leave here; GHL will dedupe if already loaded) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 
 <!-- NAVIGATION (same as mapelfirm.com, plus the theme switch) -->
 <nav id="siteNav">
@@ -51,6 +51,11 @@
 
     <!-- CONTENTS SIDEBAR -->
     <aside class="lc-contents" aria-label="Contents">
+      <button class="lc-contents-toggle" type="button" aria-expanded="true" aria-controls="lcContentsList" aria-label="Hide contents">
+        <svg class="lc-icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg>
+        <svg class="lc-icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+      </button>
+      <div class="lc-contents-list" id="lcContentsList">
       <p class="lc-contents-title">Contents</p>
       <ul>
         <li><a href="#filmmaking">The Filmmaking</a></li>
@@ -59,17 +64,18 @@
         <li><a href="#preservation-section">The Preservation</a></li>
         <li><a href="#investment">The Investment</a></li>
       </ul>
+      </div>
     </aside>
 
     <main class="lc-article">
 
-      <h1 class="lc-title">Their Life, in a Book <br>and a Film</h1>
-      <p class="lc-meta">Legacy Codex Project</p>
+      <h1 class="lc-title">What To Expect</h1>
+      <p class="lc-meta">Family Legacy Project</p>
 
       <!-- 1. LANDSCAPE VIDEO (placeholder until the film is ready) -->
       <section class="lc-section" id="filmmaking">
         <h2>The Filmmaking</h2>
-        <div class="lc-frame lc-frame-landscape">
+        <div class="lc-frame lc-frame-landscape lc-wide">
           <span class="lc-play" aria-hidden="true"></span>
         </div>
         <p>Five sessions of four to five hours each, at the times and in the place that suit your father or mother. Between sessions, our crew quietly follows their day. The film then shows not only what they say, but the life they live.</p>
@@ -79,12 +85,107 @@
       <section class="lc-section" id="penmanship">
         <h2>The Penmanship</h2>
         <p>Every word in the book is theirs. We shape only the structure, the grammar and the flow, so it reads well on the page. The voice your family knows stays exactly as it is.</p>
+
+        <!-- Sample pages from a book. Redacted words are empty black boxes; the hidden text is not in this file. -->
+        <div class="lc-book" aria-label="Sample pages from a book">
+          <div class="lc-book-page">
+            <p>My father was very, very rich. But I am very grateful to the man who brought us back across that water, because had that not happened I would not be what I am today. It was God who put that thought into my uncle&rsquo;s mind and turned him toward his widowed sister and her children when he could simply have gone home. I planned none of it. Today I may make plans but in those days there was no planning. There was only what God arranged, and what a good man chose to do about it.</p>
+            <h4>Old Town, Mombasa</h4>
+            <p class="lc-cont">My uncle&rsquo;s house was in Old Town, next to the old harbour. His children, my mother and my brother <span class="lc-redacted" style="width:2.1em" aria-label="Redacted"></span> and my two sisters <span class="lc-redacted" style="width:2.2em" aria-label="Redacted"></span> and <span class="lc-redacted" style="width:2.5em" aria-label="Redacted"></span>, his other sister who had been divorced and came with her own child. I don&rsquo;t know the exact count on any given day because it shifted. Eleven children I remember, in a house built for fewer. There were four of us in one room with two bunk beds. His two sons, my brother, and me. The room was so tiny, you turned in the bed at night and knew someone was beside you or above you.</p>
+            <p>My uncle was very generous. Although he treated his children and us the same, there were difficulties. I won&rsquo;t say there were no difficulties. When you have eleven children in a small house, there are complications. He was very, very strict about prayers. He had a cane and if he caned you, it left a mark on your hand. Every morning before Fajr he would walk through and call our names. He would pass again on his way to the mosque and call them a second time. If you were not up, the next thing was kiboko. That is how he made sure we prayed. And he instilled in me the religious values I have carried my whole life.</p>
+            <p>After he disciplined you, he would give you chocolate. That one bar of chocolate would be shared among eight children. You took your portion and you were grateful. When you have grown up sharing one piece of chocolate eight ways, you carry that with you. You know what it means to take your small piece and be satisfied. That is something you cannot learn any other way.</p>
+            <p>My mother had nothing except her will to fight and she fought for us. When the doctor prescribed a tablet, she would take half. She would split it with her fingers and take one half and save the other for later. The whole tablet cost more than she could spend in one day.</p>
+            <p>I was admitted to Kaloleni Primary School at around the age of six, not long after we came back from Somalia. In those days there was no nursery, no kindergarten, nothing before Standard One. You reached the right age and you started school.</p>
+            <p>The school fees at Kaloleni were eleven shillings for primary, thirty-two or thirty-three for secondary. The fee was okay. What was not okay was everything around the fee. I left the house at quarter to seven every morning and walked from Old Town all the way to Kaloleni.</p>
+            <p class="lc-book-folio">1</p>
+          </div>
+          <div class="lc-book-page">
+            <p class="lc-book-running"><span class="lc-redacted" style="width:4em" aria-label="Redacted"></span></p>
+            <p class="lc-cont">Some days I would not come home for lunch because the distance was too much. On those days my mother came to school herself with whatever she had brought, and she would sit there and make sure I ate.</p>
+            <p>A penny in the morning. Five cents in the afternoon. At that time a penny bought you a bowl of potatoes and crisps from the small vendors near school. Bread was sixty cents a kilo and meat was one shilling fifty. From the age of four until I became a partner at Roshanali and Company, life was very, very tough. I don&rsquo;t pray for anybody to live a life like that. But it was my life. And the living of it instilled things in me that nothing else could have put there.</p>
+            <p>There was a teacher at Kaloleni called Mr. Lucas Remedios. He was a Goan man. My mother went to him when I was in Standard Seven. She spoke to him and told him that I was her only son and she depended on me. Hearing those words from my mother made Mr. Remedios feel pity for her. From that day he made sure I studied. He checked on me, he followed up, he kept the teachers paying attention to me. He took on something that no school structure required of him.</p>
+            <p>I was a very, very naughty child. Super naughty. My mother always believed my brother would do everything because he was calm and steady. I was neither calm nor steady about anything. As it turned out, she was right about the child I was, but wrong about what it meant. I have found that, more often than not, the naughty and rebellious child becomes the one who builds something in life. The calm child studies, becomes a doctor or an engineer, gets a good job and follows the system. The rebellious child looks at the system and wants to change it. Sometimes, the qualities that make a child difficult to manage are the same qualities that later make him willing to take risks, challenge what exists and build something of his own.</p>
+            <p>One afternoon coming from school I passed a man carrying his tray of mandazis on his head. I knocked it down. The tray, the mandazis, everything fell on the ground. He got angry and we fought, right there in the road. In our community at that time, any elder in the street had authority over you. If you misbehaved in front of someone your father&rsquo;s age, they dealt with you on the spot. And if you were foolish enough to go home afterward and report what had happened, your parents would beat you a second time for whatever you had done to deserve the first.</p>
+            <p>The child who told his mother a stranger had slapped him was confessing to a crime. Every adult in the street was responsible for every child in the street. Children belonged to the whole community, not just to their own households. That was not a rule that was written down anywhere. It was simply how the community understood itself.</p>
+            <p>We swam at Fort Jesus, in the channel off the old fortifications. My mother absolutely forbade it. Her method for catching us was simple. She would take your arm and lick the skin. If she tasted salt, she would smear soap on your face and scold you. She did not beat me</p>
+            <p class="lc-book-folio">2</p>
+          </div>
+          <div class="lc-book-page">
+            <p class="lc-book-running">Fatherless</p>
+            <p class="lc-cont">for it because I was grown enough by then. But the scolding was its own thing. I went back every time. The sea was there and we were young.</p>
+            <p>School ran from eight to twelve, then one-thirty to four. After four we played cricket with a tennis ball in whatever open space we could find. We rolled toy wheels made from bicycle spokes through the streets of Old Town, steering them with a wire hook. We invented what we needed. Nothing was provided but life was easy in that way. We didn&rsquo;t have money. But we had mother nature, friendships and we were creative.</p>
+            <p>One afternoon the tennis ball rolled into a gap below the level of the street, between old buildings. I climbed down to get it. Above me a heavy steel boulder slipped. Someone shouted my name and I moved on instinct. The boulder passed directly over the place where I had been standing. It struck the boy below me and broke his leg. I climbed back up with the ball in my hand, breathing heavily and still trying to understand what had happened.</p>
+            <p>I have thought about that afternoon many times since. A heart attack came later. Then there was the ship off Mogadishu with 1,257 people aboard. Later still, there was the hospital in Dubai, when the oxygen failed on the monitor. But Old Town and the cricket ball came first. That was the first time I survived something that could have killed me.</p>
+            <p>I started smoking at Kaloleni, in Standard Seven. We kept a packet of cigarettes and a matchbox hidden in a hollow in a tree near the school. During break we would go to the tree and smoke. It was a trend among men at that time. You were considered a mature man if you smoked. So, everybody smoked and nobody told us it was dangerous.</p>
+            <p>One evening my uncle sent me to buy cigarettes for him. Walking home in the dark with the packet, I lit one for myself. Then I saw him coming toward me on the road. I pushed the lit cigarette into my trouser pocket. It burned through the fabric and into my thigh. I held myself completely still as it burned me. That was my only option at that time because the alternative was revealing what I had been doing to a man who still had the cane. I still carry the cigarette burn mark on my thigh.</p>
+            <p>Our community in those years was not kind to poverty. My mother was a widow in her brother&rsquo;s house with four children and nothing of her own. The community treated her accordingly. They looked through her. When you have nothing, people are very busy. They do not have time for you. When I became prosperous it changed. Quickly, and completely, all of a sudden people had time. They sent salaams. They asked after her health. They gave her regards to pass to her son.</p>
+            <p>My mother received all of it and said nothing impolite. But someone asked her one day how she passed on all these regards that were now coming through her. She said:</p>
+            <blockquote>&ldquo;When I go home, I will tell the safe, so-and-so has given you regards. Because I am the same lady you used to ignore.&rdquo;</blockquote>
+            <p class="lc-book-folio">3</p>
+          </div>
+          <div class="lc-book-page">
+            <p class="lc-book-running"><span class="lc-redacted" style="width:4em" aria-label="Redacted"></span></p>
+            <p>In other words, she passed their regards to the money in the safe in my house. She knew that was what their regards were for. That was Mariambai. She chose her words carefully, but she never became bitter about how they had treated her.</p>
+            <p>I sat the Standard Eight examinations and the results gave me a choice. Three secondary schools. Technical High School, Allidina Visram, MIOME — the Mombasa Institute of Muslim Education. Allidina was the best school at that time and my marks had earned it.</p>
+            <p>I walked to school every morning at quarter to seven. I had managed on a penny and five cents a day. I had gotten into fights at the roadside. I had taken a burning cigarette into my pocket rather than be seen by my uncle. And I had passed. My mother had stood before Lucas Remedios and told him I was her only son and she depended on me. She said it because it was true and because it was the only resource she had. She was building my education one conversation at a time. One half-tablet at a time. Because the money was not there to build it any other way. I did not disappoint her. I have tried, across everything that came after, not to.</p>
+            <h4>Allidina and London</h4>
+            <p class="lc-cont">Allidina was the best school in Mombasa at the time. The teachers in those days were expatriates. The principal was Mr. Davis and when he retired, Mr. Pereira took over. We joined secondary school when we were teanagers and by the time we reached Form Six, we looked like full grown men. When the Form One students arrived, we looked at them and saw small children.</p>
+            <p>I borrowed books throughout my secondary school because my mother could not afford to buy them. I always returned them carefully as they were not mine to damage. Maths was easy for me. It had always been easy. Even now, at this age, I am good with numbers. I can look at a calculation, a quotation, a column of figures, and know before I have finished reading it that something is wrong. I send it back and say, &ldquo;Go and check this. Something is wrong here.&rdquo; That instinct started when I was young and stayed with me. Physics was different. Science had defeated me throughout my primary school. I never found my way into it. English was fine. Biology was fine. But Physics was where I struggled.</p>
+            <p>We were also extremely naughty at Allidina. During break, we would go to an Arab shop near the school. That was where the smoking happened. I had started at Kaloleni with a packet hidden in a tree. By the time I reached Allidina, the habit was firmly established.</p>
+            <p>There was a boy in our group called Rago Vir who had a reputation for being the most mischievous. A real troublemaker. One day the teacher called Rago and frisked him, reaching into Rago&rsquo;s short pants pocket to look for cigarettes or a matchbox. The teacher&rsquo;s hand went in and came out empty on the other side. Rago had cut the bottom of his school shorts</p>
+            <p class="lc-book-folio">4</p>
+          </div>
+          <div class="lc-book-page">
+            <p class="lc-book-running">Fatherless</p>
+            <p class="lc-cont">pocket open. Clean hands, no evidence. Rago went on to represent East Africa in cricket, one of the best they ever produced.</p>
+            <p>When I was in Form Two, I came to school one day and found a new sports teacher had been posted to Allidina. His name was Lucas Remedios. The same man. The Goan teacher from Kaloleni Primary School. Of all the schools in Mombasa the transfer order might have sent him to, he had been sent to mine. And just as he had done at Kaloleni, he started watching over me again. He kept the teachers paying attention to me. He made sure I did not fall behind. I have never found a satisfying explanation for that except that it was all by destiny.</p>
+            <p>When the Form Four results came, my uncle did not believe them. I had not studied particularly hard. I sat the examinations and wrote what I knew. The marks came back as first-grade marks, but the certificate showed a second grade. This was because there was a rule at the time. If you had a credit in English rather than a distinction, you could not receive a first grade, regardless of how well you had done in the other subjects. My English was a credit so the certificate showed a second grade.</p>
+            <p>Of all the marks I scored in each subject, the Gujarati result remains a mystery to me. I could neither speak Gujarati nor write it. It was not a language I used in daily life. I sat the examination and came back with a distinction. My own feeling was that the examiner must have been a British expatriate, someone who could mark the paper for structure and form without knowing the language himself. If someone who truly knew Gujarati had read my answers, there was no way I would have received a distinction.</p>
+            <p>My uncle had promised that if I passed, he would send me to do my higher education in the United Kingdom. He was a perfect gentleman, the results were in front of him, and he kept his word. Around the same time, two of my friends joined the Kenya Air Force. One was Bashir Kalyan. Bashir went on to hold a senior position in the Air Force before he retired. We had talked about joining together and it was a serious consideration at the time. But my uncle had made his promise, and I had already made a promise to myself that I wanted London.</p>
+            <p>I had grown up watching aircraft, and the idea of aeronautical engineering had taken hold of me. A well-paying job meant security for my family, for my mother, my sisters and my brother. So when Bashir and the others went one way, I went the other.</p>
+            <p>I was admitted to Loughborough College of Technology. In 1963, I left Mombasa. London at the time was a different place from the London we know now. When we arrived, some people thought we were coming from the jungle. They seemed to believe Africa meant animals everywhere and people living in the bush. That was the Africa they had read and heard about from their countrymen.</p>
+            <p>I had grown up in Mombasa. It was very beautiful in those days. A harbour city with centuries of trade linking it to India, Arabia and the East African coast. Monsoon winds had</p>
+            <p class="lc-book-folio">5</p>
+          </div>
+          <div class="lc-book-page">
+            <p class="lc-book-running"><span class="lc-redacted" style="width:4em" aria-label="Redacted"></span></p>
+            <p class="lc-cont">been carrying ships, merchants and languages into Mombasa for centuries. None of that was visible to the people who looked at us that way.</p>
+            <p>At Loughborough, my fees were being paid by three or four people from Kenya. Some contributed about £25 a month, others £31. My uncle had found them. They were people willing to sponsor a boy from Mombasa who had the marks and needed the opportunity to continue his education. For the first time, the future seemed to be opening up before me.</p>
+            <p>However, it wasn&rsquo;t long before my dream of becoming an aeronautical engineer came to an abrupt end. Six or eight months into my course, two of my sponsors withdrew their support. When the money stopped, so did the course. There was nothing my uncle could do, and there was surely nothing I could do. The opportunity that had brought me to Loughborough was simply no longer there and I had to accept it and move on. I dropped out of college. While my classmates attended lectures and learned about aeroplanes, I stayed in London and found whatever work I could.</p>
+            <p>I worked in a paint factory, mixing colours, carrying drums and breathing fumes all day in a building that smelled of paint from morning to night. It was the kind of work that left colors on your skin that washing could not fully remove. I worked as a waiter in a chain restaurant. You learned quickly what six pence looked like when a customer slid it across the table and felt generous about tipping it to you. In Mombasa, you could buy Kahawa, five cups for ten cents. But in London, things were different. Breakfast was bread and tea. One piece of meat and one potato for lunch.</p>
+            <p>On Sundays, I worked at a grocery called LA India. I handled deliveries, loaded food and took orders to people&rsquo;s houses around the neighbourhood. Sunday was my best payment of the week. I was staying in Forest Gate. On Saturdays and Sundays, east of the station, there was a bazaar street where people sold second-hand clothes. Shirts, jackets and trousers had been worn and washed so many times the labels had faded. Rael Brook and other brands were there at prices we could afford.</p>
+            <p>Three of us pooled £500 and bought a Mini Minor. Five hundred pounds represented months of paint factories, six-pence tips and Sunday deliveries. None of us could have bought the car alone. In order to decide who would use the car on a given day, we each wrote our name on a separate piece of paper, folded the three slips, mixed them up and drew one. Whoever picked his own name got the car for the day.</p>
+            <p>There was a racial integration organisation in London at the time. Although I am not completely certain of the name. I joined it and became active. It brought me together with people who were thinking about the same questions I was thinking about. What did it mean to be here? What future was available to us? When I looked at the situation honestly, the answer was not encouraging.</p>
+            <p class="lc-book-folio">6</p>
+          </div>
+          <div class="lc-book-page">
+            <p class="lc-book-running">Fatherless</p>
+            <p>When India became independent in 1947, Indians living in Kenya faced a choice. Those who did not take Indian or Pakistani citizenship became, under the British Nationality Act of 1948, Citizens of the United Kingdom and Colonies by Naturalization. They received full British passports. In 1954, my mother registered herself and all four of us children under the law. So I arrived in England holding a document which said, in its quiet official way, that I belonged there as much as anyone else.</p>
+            <p>But I held a Form Six certificate and nothing beyond it. With a Form Six certificate in England in those years, odd jobs were what was available. Without further qualifications, there was no other door. And the money for those qualifications had now disappeared. I had thought about the idea of building my life in the UK but after about two years of deep struggle, I decided to come back home. There was no future for me in London and nothing was keeping me there.</p>
+            <p>When I came back home, I joined my uncle&rsquo;s business. There was no other alternative. With my qualifications, I could not find better employment. My uncle put me on a salary of one or two hundred shillings a month. I was living hand to mouth and could barely afford anything. There were days when I had to beg people for cigarettes because I did not have the money to buy my own.</p>
+            <p>My mother was still in the same house. She was still poor and dependent. I was her hope, the son she had walked to school to bring food to, the boy Mr. Remedios had watched over twice. I had gone to London to become an aeronautical engineer and came back with nothing but second-hand shirts from Forest Gate to show for.</p>
+            <p>I knew I had to become something. I did not yet know how. It was during this period of struggle, back in Mombasa and working for my uncle that I learned what had happened to my brother. He was visiting a relative whose garden was full of roses. He reached out and picked one. Someone from the house saw him and slapped him for taking it. When this incident happened, it turned the small spark of ambition I carried inside me into a burning determination. I said to myself,</p>
+            <blockquote>&ldquo;To hell with it! This is enough! I can&rsquo;t continue to live like this anymore.&rdquo;</blockquote>
+            <p>It was not about the slap but everything contained in it. What we were to those people. What they thought we would remain. My brother standing in that garden, the son of a widow, without a father and without a family name they respected. That was what they saw when they looked at him. Something settled in me then and never moved again.</p>
+            <p>Kenya had become independent in 1963. From inside the country, independence meant everything was being remade. The population was fourteen or fifteen million and life was manageable. There were no matatus yet. The matatu was still years away, its name eventually coming from the three pennies it once charged. The government was being built from the</p>
+            <p class="lc-book-folio">7</p>
+          </div>
+          <div class="lc-book-page">
+            <p class="lc-book-running"><span class="lc-redacted" style="width:4em" aria-label="Redacted"></span></p>
+            <p class="lc-cont">ground up. The people entering government were beginning their own careers. Licences were being issued. Trade was opening. There was room for someone willing to move quickly and take risks.</p>
+            <p>I had one advantage many Asians did not have. I was never afraid of Africans.. I had never lived separately from them in the way many people in our community had. Many Asians kept themselves apart. Some were nervous about independence. Some were uncertain whether there would still be a place for them in Kenya. I had grown up in Old Town with very little. I played cricket in those streets with anyone who wanted to play. I was used to mixing freely, talking to anyone and forming friendships across lines other people saw as barriers.</p>
+            <p>When independence came, my refusal to judge people by their race helped me build relationships that became the foundation of everything I built. I cultivated the relationships I had formed with people who were becoming important in the new Kenya. I never stopped knowing them and never did I look past someone because of what they were at the moment I met them. And they remembered me. That became my stepping stone.</p>
+            <p>Only much later, looking back at everything which followed, did I understand what the loss of the Loughborough fees had meant. If those sponsors had continued paying, I would have graduated and become an aeronautical engineer. I would have spent my life servicing aircraft for people who flew in them.</p>
+            <p>Instead, the door in England closed and another door opened. <span class="lc-redacted" style="width:7.2em" aria-label="Redacted"></span> the ships, the parliament, the glass plant. Each opportunity came because the previous path had ended. What felt like failure at the time turned out to be a blessing in disguise. Years later, my business partner <span class="lc-redacted" style="width:2.8em" aria-label="Redacted"></span> bought the very same house where Ashik had once plucked a rose and been slapped for it.</p>
+            <p class="lc-book-folio">8</p>
+          </div>
+        </div>
       </section>
 
-      <!-- 3. PORTRAIT CAROUSEL: two photos and a video (placeholders) -->
+      <!-- 3. LANDSCAPE CAROUSEL: two photos and a video (placeholders) -->
       <section class="lc-section" id="book">
         <h2>The Book</h2>
-        <div class="lc-carousel" aria-roledescription="carousel" aria-label="The Book">
+        <div class="lc-carousel lc-wide" aria-roledescription="carousel" aria-label="The Book">
           <div class="lc-carousel-track" tabindex="0">
             <div class="lc-carousel-slide lc-frame" aria-roledescription="slide" aria-label="Photo, 1 of 3"></div>
             <div class="lc-carousel-slide lc-frame" aria-roledescription="slide" aria-label="Photo, 2 of 3"></div>
@@ -108,7 +209,7 @@
       <!-- 4. IMAGE (placeholder) -->
       <section class="lc-section" id="preservation-section">
         <h2>The Preservation</h2>
-        <div class="lc-frame lc-frame-landscape"></div>
+        <div class="lc-frame lc-frame-landscape lc-wide"></div>
         <p>Their story is kept in three countries, so that it outlives us all. Your family receives a preservation certificate, and any member of the family can ask to see it at any time.</p>
       </section>
 
@@ -140,7 +241,7 @@
         </thead>
         <tbody>
           <tr class="lc-ours">
-            <th scope="row">Mapel Firm<span>Legacy Codex</span></th>
+            <th scope="row">Mapel Firm<span>Family Legacy</span></th>
             <td class="lc-price">$36,000</td>
             <td class="lc-covers">The documentary film and the book, made as one work. Family and archival editions. Preservation of the copies in three countries, with a certificate. A family crest for the book and film, and a photobook of the whole process.</td>
             <td class="lc-yes">Included</td>
@@ -308,6 +409,17 @@
     });
     window.addEventListener('resize', function () {
       if (window.innerWidth > 900) closeMenu();
+    });
+  }
+
+  // ─── Contents: the × hides the list, the menu icon brings it back ───
+  var contentsToggle = document.querySelector('.lc-contents-toggle');
+  if (contentsToggle) {
+    contentsToggle.addEventListener('click', function () {
+      var open = contentsToggle.getAttribute('aria-expanded') !== 'true';
+      contentsToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+      contentsToggle.setAttribute('aria-label', open ? 'Hide contents' : 'Show contents');
+      document.querySelector('.lc-contents').classList.toggle('is-collapsed', !open);
     });
   }
 

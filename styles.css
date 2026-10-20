@@ -1,5 +1,5 @@
 /* ============================================================
-   MAPEL FIRM — Legacy Codex landing page
+   MAPEL FIRM — Family Legacy landing page
    Paste this entire file into GoHighLevel:
    Page Settings → Custom CSS
    The nav rules match mapelfirm.com (Legacy-Codex styles.css).
@@ -310,8 +310,8 @@ nav.is-scrolled {
 .lc-layout,
 .lc-pricing-head {
     display: grid;
-    grid-template-columns: minmax(13rem, 1fr) minmax(0, 43rem) minmax(1.5rem, 1fr);
-    column-gap: 2.5rem;
+    grid-template-columns: minmax(13rem, 1fr) minmax(0, 62rem) minmax(1.5rem, 1fr);
+    column-gap: 3rem;
 }
 
 .lc-layout {
@@ -324,6 +324,38 @@ nav.is-scrolled {
     align-self: start;
     position: sticky;
     top: 7.5rem;
+}
+
+.lc-contents-toggle {
+    display: block;
+    width: 2.5rem;
+    height: 2.5rem;
+    margin: -.5rem 0 1.25rem -.5rem;
+    padding: .5rem;
+    border: 0;
+    background: none;
+    color: var(--lc-text);
+    cursor: pointer;
+}
+
+.lc-contents-toggle svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.8;
+    stroke-linecap: round;
+}
+
+.lc-contents-toggle .lc-icon-menu,
+.lc-contents.is-collapsed .lc-icon-close,
+.lc-contents.is-collapsed .lc-contents-list {
+    display: none;
+}
+
+.lc-contents.is-collapsed .lc-icon-menu {
+    display: block;
 }
 
 .lc-contents-title {
@@ -360,12 +392,24 @@ nav.is-scrolled {
     min-width: 0;
 }
 
+/* Text keeps a comfortable reading width; .lc-wide media uses the full column */
+.lc-article > *,
+.lc-section > :not(.lc-wide),
+.lc-pricing-head > * {
+    max-width: 43rem;
+}
+
+.lc-article > .lc-section {
+    max-width: none;
+}
+
 .lc-title {
     margin: 0 0 2.5rem;
-    font-size: clamp(2.6rem, 4.4vw + 1rem, 5rem);
-    font-weight: 700;
-    letter-spacing: -.02em;
-    line-height: 1.08;
+    font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
+    font-size: clamp(3rem, 4.6vw + 1.2rem, 5.75rem);
+    font-weight: 400;
+    letter-spacing: -.01em;
+    line-height: 1.05;
     color: var(--lc-text);
 }
 
@@ -375,7 +419,7 @@ nav.is-scrolled {
 }
 
 .lc-section {
-    margin-top: 5rem;
+    margin-top: 7rem;
 }
 
 .lc-section:first-of-type {
@@ -407,6 +451,72 @@ nav.is-scrolled {
     padding-left: .25rem;
 }
 
+/* ── BOOK PAGES (Penmanship) ──
+   The line on the left marks where the website text ends and the book text begins. */
+.lc-book {
+    margin: 3rem 0 1rem;
+    padding: .25rem 0 .25rem clamp(1.25rem, 3vw, 2.5rem);
+    border-left: 2px solid var(--lc-text);
+    font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
+    font-size: clamp(1.05rem, .4vw + .95rem, 1.2rem);
+    line-height: 1.7;
+}
+
+.lc-book-page + .lc-book-page {
+    margin-top: 3.5rem;
+}
+
+.lc-book p {
+    margin: 0;
+    text-align: justify;
+    text-indent: 1.5em;
+    -webkit-hyphens: auto;
+    hyphens: auto;
+}
+
+.lc-book p.lc-cont {
+    text-indent: 0;
+}
+
+.lc-book h4 {
+    margin: 2rem 0 1rem;
+    font-size: 1em;
+    font-style: italic;
+    font-weight: 400;
+    text-align: center;
+}
+
+.lc-book blockquote {
+    margin: 1rem 0 1rem 1.5em;
+}
+
+.lc-book p.lc-book-running,
+.lc-book p.lc-book-folio {
+    text-align: center;
+    text-indent: 0;
+    color: var(--lc-muted);
+    font-size: .75em;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+}
+
+.lc-book p.lc-book-running {
+    margin-bottom: 1.5rem;
+}
+
+.lc-book p.lc-book-folio {
+    margin-top: 1.5rem;
+    letter-spacing: 0;
+}
+
+/* Redactions stay solid black in both themes */
+.lc-redacted {
+    display: inline-block;
+    height: 1em;
+    vertical-align: -.12em;
+    background: #000;
+}
+
 /* ── MEDIA PLACEHOLDERS ── */
 .lc-frame {
     position: relative;
@@ -417,6 +527,12 @@ nav.is-scrolled {
 
 .lc-frame-landscape {
     aspect-ratio: 16 / 9;
+}
+
+.lc-wide {
+    width: 100%;
+    margin-top: 2.5rem;
+    margin-bottom: 2.75rem;
 }
 
 .lc-play {
@@ -435,7 +551,6 @@ nav.is-scrolled {
 /* ── PORTRAIT CAROUSEL ── */
 .lc-carousel {
     margin: 0 0 1.75rem;
-    max-width: 28rem;
 }
 
 .lc-carousel-track {
@@ -453,7 +568,7 @@ nav.is-scrolled {
 .lc-carousel-slide {
     flex: 0 0 100%;
     margin: 0;
-    aspect-ratio: 4 / 5;
+    aspect-ratio: 16 / 9;
     scroll-snap-align: start;
 }
 
@@ -730,11 +845,16 @@ nav.is-scrolled {
     }
 
     .lc-section {
-        margin-top: 3.5rem;
+        margin-top: 4rem;
     }
 
-    .lc-carousel {
-        max-width: none;
+    .lc-wide {
+        margin-top: 1.75rem;
+        margin-bottom: 2rem;
+    }
+
+    .lc-book p {
+        text-align: left;
     }
 
     .lc-pricing {

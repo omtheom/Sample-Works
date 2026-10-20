@@ -1,4 +1,4 @@
-# Mapel Firm — Legacy Codex Landing Page
+# Mapel Firm — Family Legacy Landing Page
 
 Same setup as the main site in Legacy-Codex: one CSS file and one HTML block for GoHighLevel.
 
