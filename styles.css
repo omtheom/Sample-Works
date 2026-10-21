@@ -647,9 +647,22 @@ nav.is-scrolled {
     aspect-ratio: auto;
 }
 
-/* Each image keeps its own shape and fits on screen; tall images are centred */
-.lc-carousel-slide.lc-slide-fit img,
+/* The Preservation photo fills a 16:9 frame */
+.lc-photo {
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    background: var(--lc-frame);
+}
+
 .lc-photo img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Each carousel image keeps its own shape and fits on screen; tall images are centred */
+.lc-carousel-slide.lc-slide-fit img {
     display: block;
     width: auto;
     max-width: 100%;
