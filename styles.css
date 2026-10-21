@@ -470,7 +470,7 @@ nav.is-scrolled {
 .lc-book-viewport::before {
     content: "";
     position: absolute;
-    top: 2.6rem;
+    top: .5rem;
     bottom: .5rem;
     left: .45rem;
     width: 1px;
@@ -478,16 +478,18 @@ nav.is-scrolled {
     opacity: .55;
 }
 
-.lc-book-viewport::after {
-    content: "\201C";
-    position: absolute;
-    top: -.35rem;
-    left: 0;
+/* A large open quotation mark, centred, to say "here is something to read" */
+.lc-book .lc-book-quote {
+    margin: 0 0 .5rem;
+    height: 5.5rem;
+    overflow: hidden;
     color: var(--lc-faint);
     font-family: 'EB Garamond', Garamond, serif;
-    font-size: 2.6rem;
-    line-height: 1;
-    opacity: .7;
+    font-size: 13rem;
+    line-height: .85;
+    text-align: center;
+    text-indent: 0;
+    opacity: .6;
 }
 
 .lc-book-track {
@@ -510,18 +512,6 @@ nav.is-scrolled {
     min-width: 0;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-}
-
-.lc-book-bar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 0 0 1.25rem clamp(1.5rem, 3.5vw, 2.75rem);
-    padding-bottom: .5rem;
-    border-bottom: 1px solid var(--lc-line);
-    font-family: 'Source Serif 4', Georgia, serif;
-    font-size: .8em;
-    color: var(--lc-muted);
 }
 
 .lc-book .lc-carousel-controls {
@@ -638,15 +628,6 @@ nav.is-scrolled {
     scroll-snap-align: start;
 }
 
-/* Slides that take the shape of their images instead of a fixed frame */
-.lc-track-fit {
-    align-items: flex-start;
-}
-
-.lc-carousel-slide.lc-slide-fit {
-    aspect-ratio: auto;
-}
-
 /* The Preservation photo fills a 16:9 frame */
 .lc-photo {
     aspect-ratio: 16 / 9;
@@ -659,16 +640,6 @@ nav.is-scrolled {
     width: 100%;
     height: 100%;
     object-fit: cover;
-}
-
-/* Each carousel image keeps its own shape and fits on screen; tall images are centred */
-.lc-carousel-slide.lc-slide-fit img {
-    display: block;
-    width: auto;
-    max-width: 100%;
-    height: auto;
-    max-height: calc(100vh - 12rem);
-    margin: 0 auto;
 }
 
 /* Show each image and the video whole, without cropping */
@@ -688,14 +659,29 @@ nav.is-scrolled {
 }
 
 .lc-carousel-arrow {
-    width: 2.5rem;
+    display: inline-flex;
+    align-items: center;
+    gap: .5rem;
     height: 2.5rem;
+    padding: 0;
     border: 0;
     background: none;
     color: var(--lc-muted);
     font: inherit;
     font-size: 1.25rem;
     cursor: pointer;
+}
+
+.lc-carousel-arrow span {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: .8rem;
+    letter-spacing: .02em;
+}
+
+.lc-carousel-count {
+    font-family: 'Source Serif 4', Georgia, serif;
+    font-size: .8rem;
+    color: var(--lc-muted);
 }
 
 .lc-carousel-arrow:hover {

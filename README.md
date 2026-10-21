@@ -22,7 +22,7 @@ Same setup as the main site in Legacy-Codex: one CSS file and one HTML block for
 - Sections: The Filmmaking (landscape video frame), The Penmanship (text), The Book (portrait carousel: two photo frames and one video frame), The Preservation (landscape image frame).
 - The Investment: one table with the deliverables down the left and the providers across the top: three competitors first, Mapel Firm last and shaded. Each column shows a tick or dash per deliverable, with the price in the bottom row. It fits a phone screen without scrolling sideways.
 
-The Book carousel holds two images, each at its own shape. The Preservation photo fills a 16:9 frame. The film frame is still an empty placeholder.
+The Book carousel shows the thumbnail photo, the second photo, then the book video, in 16:9 frames. The Preservation photo fills a 16:9 frame. The film frame is still an empty placeholder.
 
 ## Competitor prices
 

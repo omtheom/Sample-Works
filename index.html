@@ -99,13 +99,7 @@
 
         <!-- Sample pages from a book, one page at a time. Names are empty black boxes; the names are not in this file. -->
         <div class="lc-book lc-carousel" aria-roledescription="carousel" aria-label="Sample pages from a book">
-          <div class="lc-book-bar">
-            <span class="lc-carousel-count" aria-live="polite"></span>
-            <span>
-              <button class="lc-carousel-arrow" type="button" data-dir="-1" aria-label="Previous page">&#8592;</button>
-              <button class="lc-carousel-arrow" type="button" data-dir="1" aria-label="Next page">&#8594;</button>
-            </span>
-          </div>
+          <p class="lc-book-quote" aria-hidden="true">&ldquo;</p>
           <div class="lc-book-viewport">
             <div class="lc-carousel-track lc-book-track" tabindex="0">
               <div class="lc-book-page">
@@ -201,29 +195,32 @@
             </div>
           </div>
           <div class="lc-carousel-controls">
-            <button class="lc-carousel-arrow" type="button" data-dir="-1" aria-label="Previous page">&#8592;</button>
-            <div class="lc-carousel-dots" role="tablist" aria-label="Choose page"></div>
-            <button class="lc-carousel-arrow" type="button" data-dir="1" aria-label="Next page">&#8594;</button>
+            <button class="lc-carousel-arrow" type="button" data-dir="-1" aria-label="Previous page">&#8592; <span>Swipe left</span></button>
+            <span class="lc-carousel-count" aria-live="polite"></span>
+            <button class="lc-carousel-arrow" type="button" data-dir="1" aria-label="Next page"><span>Swipe right</span> &#8594;</button>
           </div>
         </div>
       </section>
 
-      <!-- 3. CAROUSEL: two images, sized to the images themselves -->
+      <!-- 3. LANDSCAPE CAROUSEL: two images, then the book video -->
       <section class="lc-section" id="book">
         <h2>The Book</h2>
         <div class="lc-carousel lc-wide" aria-roledescription="carousel" aria-label="The Book">
-          <div class="lc-carousel-track lc-track-fit" tabindex="0">
-            <div class="lc-carousel-slide lc-slide-fit" aria-roledescription="slide" aria-label="Image, 1 of 2">
-              <img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6ad8c3c63be7ffaf0d4912e5.jpg" alt="The book, image 1">
+          <div class="lc-carousel-track" tabindex="0">
+            <div class="lc-carousel-slide lc-frame" aria-roledescription="slide" aria-label="Image, 1 of 3">
+              <img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6ad8962f3370ffeff5525cb1.jpg" alt="The book, image 1">
             </div>
-            <div class="lc-carousel-slide lc-slide-fit" aria-roledescription="slide" aria-label="Image, 2 of 2">
-              <img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6ad8c3c6fdcb71bb82513b48.png" alt="The book, image 2" loading="lazy">
+            <div class="lc-carousel-slide lc-frame" aria-roledescription="slide" aria-label="Image, 2 of 3">
+              <img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6ad8962f436f78fefbdcc188.jpg" alt="The book, image 2" loading="lazy">
+            </div>
+            <div class="lc-carousel-slide lc-frame" aria-roledescription="slide" aria-label="Video, 3 of 3">
+              <video controls playsinline preload="metadata" poster="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6ad8962f3370ffeff5525cb1.jpg" src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6ad896fbf9a985d42c592b8c.mp4"></video>
             </div>
           </div>
           <div class="lc-carousel-controls">
-            <button class="lc-carousel-arrow" type="button" data-dir="-1" aria-label="Previous slide">&#8592;</button>
+            <button class="lc-carousel-arrow" type="button" data-dir="-1" aria-label="Previous slide">&#8592; <span>Swipe left</span></button>
             <div class="lc-carousel-dots" role="tablist" aria-label="Choose slide"></div>
-            <button class="lc-carousel-arrow" type="button" data-dir="1" aria-label="Next slide">&#8594;</button>
+            <button class="lc-carousel-arrow" type="button" data-dir="1" aria-label="Next slide"><span>Swipe right</span> &#8594;</button>
           </div>
         </div>
         <p>Two editions are made.</p>
@@ -465,7 +462,7 @@
       dot.setAttribute('role', 'tab');
       dot.setAttribute('aria-label', 'Slide ' + (i + 1));
       dot.addEventListener('click', function () { goTo(i); });
-      dotsWrap.appendChild(dot);
+      if (dotsWrap) dotsWrap.appendChild(dot);
       return dot;
     });
 
