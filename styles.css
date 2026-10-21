@@ -14,13 +14,13 @@
 /* Off-white theme (default) */
 :root,
 :root[data-lc-theme="light"] {
-    --lc-bg: #F0EEE6;
+    --lc-bg: #FBFAF6;
     --lc-text: #1F1E1D;
     --lc-muted: #5F5D58;
     --lc-faint: #77746D;
-    --lc-line: #D6D2C6;
-    --lc-frame: #DCD9CF;
-    --lc-highlight: #E5E2D8;
+    --lc-line: #E3DFD5;
+    --lc-frame: #EEEBE3;
+    --lc-highlight: #F2EFE7;
   /* Nav tokens, same names and values as mapelfirm.com */
     --ink: #111111;
     --ink-soft: #2a2a2a;
@@ -636,6 +636,26 @@ nav.is-scrolled {
     margin: 0;
     aspect-ratio: 16 / 9;
     scroll-snap-align: start;
+}
+
+/* Slides that take the shape of their images instead of a fixed frame */
+.lc-track-fit {
+    align-items: flex-start;
+}
+
+.lc-carousel-slide.lc-slide-fit {
+    aspect-ratio: auto;
+}
+
+/* Each image keeps its own shape and fits on screen; tall images are centred */
+.lc-carousel-slide.lc-slide-fit img,
+.lc-photo img {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    max-height: calc(100vh - 12rem);
+    margin: 0 auto;
 }
 
 /* Show each image and the video whole, without cropping */
