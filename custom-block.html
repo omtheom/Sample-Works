@@ -76,7 +76,8 @@
       <section class="lc-section" id="filmmaking">
         <h2>The Filmmaking</h2>
         <div class="lc-frame lc-frame-landscape lc-wide lc-film">
-          <video controls playsinline preload="metadata" src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6aec88f542ff25478ccddfd1.mp4"></video>
+          <video playsinline preload="metadata" poster="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6aecaba942ff25478cd35e90.jpg" src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6aec88f542ff25478ccddfd1.mp4"></video>
+          <button class="lc-play" type="button" aria-label="Play the film"><span></span></button>
         </div>
         <p>Five sessions of four to five hours each, at the times and in the place that suit your father or mother. Between sessions, our crew quietly follows their day. The film then shows not only what they say, but the life they live.</p>
       </section>
@@ -417,6 +418,20 @@
       if (s) observer.observe(s);
     });
   }
+
+  // ─── Film: the thumbnail and play button give way to the player ───
+  document.querySelectorAll('.lc-film').forEach(function (film) {
+    var video = film.querySelector('video');
+    var play = film.querySelector('.lc-play');
+    if (!video || !play) return;
+    play.addEventListener('click', function () {
+      film.classList.add('is-playing');
+      video.controls = true;
+      // If the browser blocks playback, the player's own controls are already showing
+      var started = video.play();
+      if (started && started.catch) started.catch(function () {});
+    });
+  });
 
   // ─── Carousels: the book photos and the book pages ─────
   document.querySelectorAll('.lc-carousel').forEach(function (carousel) {

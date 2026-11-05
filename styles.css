@@ -591,17 +591,45 @@ nav.is-scrolled {
     margin-bottom: 2.75rem;
 }
 
+/* Round play button laid over the film's thumbnail */
 .lc-play {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 0;
-    height: 0;
+    width: 5rem;
+    height: 5rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: rgba(251, 250, 246, .92);
+    box-shadow: 0 4px 24px rgba(0, 0, 0, .25);
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    transition: transform .2s ease, background-color .2s ease;
+}
+
+.lc-play span {
+    position: absolute;
+    top: 50%;
+    left: 55%;
     border-style: solid;
-    border-width: 1.1rem 0 1.1rem 1.8rem;
-    border-color: transparent transparent transparent var(--lc-text);
-    opacity: .55;
-    transform: translate(-40%, -50%);
+    border-width: .85rem 0 .85rem 1.4rem;
+    border-color: transparent transparent transparent #1F1E1D;
+    transform: translate(-50%, -50%);
+}
+
+.lc-play:hover {
+    transform: translate(-50%, -50%) scale(1.06);
+    background: #FBFAF6;
+}
+
+.lc-play:focus-visible {
+    outline: 2px solid #FBFAF6;
+    outline-offset: 4px;
+}
+
+.lc-film.is-playing .lc-play {
+    display: none;
 }
 
 /* ── PORTRAIT CAROUSEL ── */
@@ -628,17 +656,22 @@ nav.is-scrolled {
     scroll-snap-align: start;
 }
 
-/* The Filmmaking video fills its 16:9 frame; a film of another shape is
+/* The Filmmaking video sits in its 16:9 frame; a film of another shape is
    shown whole on black, as a player would */
 .lc-film {
     overflow: hidden;
     background: #000;
 }
 
+/* The thumbnail fills the frame; once playing, the film is shown whole */
 .lc-film video {
     display: block;
     width: 100%;
     height: 100%;
+    object-fit: cover;
+}
+
+.lc-film.is-playing video {
     object-fit: contain;
 }
 
