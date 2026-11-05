@@ -628,6 +628,20 @@ nav.is-scrolled {
     scroll-snap-align: start;
 }
 
+/* The Filmmaking video fills its 16:9 frame; a film of another shape is
+   shown whole on black, as a player would */
+.lc-film {
+    overflow: hidden;
+    background: #000;
+}
+
+.lc-film video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
 /* The Book cover keeps its own portrait shape, left-aligned; on desktop it is
    twice its earlier 30rem width, and on phones it fills the screen width */
 .lc-cover img {
