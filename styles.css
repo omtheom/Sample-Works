@@ -1367,6 +1367,318 @@ nav.is-scrolled {
     outline-offset: 3px;
 }
 
+/* ── THE FILMMAKING REEL ──
+   The section's paragraph told as a film. Without scripts it is one photo with
+   the paragraph under it. With scripts (.is-live) the screen holds in place
+   while the shots change, and each sentence shows as a caption. */
+.lc-reel {
+    position: relative;
+}
+
+.lc-reel-screen {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 3 / 2;
+    overflow: hidden;
+    background: #0E0D0C;
+}
+
+.lc-shot {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    margin: 0;
+    opacity: 0;
+}
+
+.lc-shot:empty {
+    display: none;
+}
+
+.lc-shot[data-static] {
+    opacity: 1;
+}
+
+.lc-shot img,
+.lc-shot video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: var(--pos-wide, 50% 50%);
+}
+
+.lc-reel-bars {
+    display: none;
+}
+
+.lc-section .lc-reel-caps {
+    max-width: 43rem;
+    margin: 1.75rem 0 0;
+}
+
+.lc-reel.is-live .lc-reel-stage {
+    position: sticky;
+    top: 6rem;
+}
+
+.lc-reel.is-live .lc-reel-screen {
+    max-height: calc(100vh - 7.5rem);
+}
+
+/* The distance scrolled while the screen holds: one stretch per beat */
+.lc-reel.is-live .lc-reel-run {
+    height: calc(var(--beats, 4) * 50vh);
+}
+
+.lc-reel.is-live .lc-shot {
+    opacity: 0;
+    transition: opacity .9s ease;
+}
+
+.lc-reel.is-live .lc-shot.is-on {
+    opacity: 1;
+}
+
+/* The outgoing shot waits underneath while the next one fades in over it */
+.lc-reel.is-live .lc-shot.is-leaving {
+    opacity: 1;
+    transition: none;
+}
+
+/* The empty chair gives way slowly to the same chair in use */
+.lc-reel.is-live .lc-shot[data-dissolve].is-on {
+    transition-duration: 1.8s;
+}
+
+.lc-reel.is-live .lc-reel-screen::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    z-index: 4;
+    background:
+        linear-gradient(to top, rgba(10,9,8,.82) 0, rgba(10,9,8,.32) 32%, rgba(10,9,8,0) 56%),
+        linear-gradient(to bottom, rgba(10,9,8,.4) 0, rgba(10,9,8,0) 16%);
+    pointer-events: none;
+}
+
+/* One bar per beat along the top; the current bar fills as the reader scrolls */
+.lc-reel.is-live .lc-reel-bars {
+    position: absolute;
+    z-index: 5;
+    top: 1rem;
+    left: 1rem;
+    right: 1rem;
+    display: flex;
+    gap: 5px;
+}
+
+.lc-reel-bars i {
+    position: relative;
+    flex: 1;
+    height: 2px;
+    overflow: hidden;
+    background: rgba(246, 242, 234, .3);
+}
+
+.lc-reel-bars i::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: #F6F2EA;
+    transform: scaleX(var(--fill, 0));
+    transform-origin: left;
+}
+
+.lc-section .lc-reel.is-live .lc-reel-caps {
+    position: absolute;
+    z-index: 6;
+    left: clamp(1.25rem, 3vw, 2.5rem);
+    right: clamp(1.25rem, 3vw, 2.5rem);
+    bottom: clamp(1.25rem, 3vw, 2.25rem);
+    display: grid;
+    max-width: none;
+    margin: 0;
+    color: #F6F2EA;
+    font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
+    font-size: clamp(1.4rem, 1.3vw + 1rem, 2.2rem);
+    line-height: 1.2;
+    pointer-events: none;
+}
+
+.lc-reel.is-live .lc-cap {
+    grid-area: 1 / 1;
+    align-self: end;
+    max-width: 34ch;
+    opacity: 0;
+    text-wrap: balance;
+    transform: translateY(.6rem);
+    transition: opacity .6s ease, transform .6s ease;
+}
+
+.lc-reel.is-live .lc-cap.is-on {
+    opacity: 1;
+    transform: none;
+    transition-delay: .15s;
+}
+
+/* A phone held upright: the screen fills the view under the nav, edge to edge */
+@media (max-width: 900px) {
+    .lc-reel.is-live .lc-reel-stage {
+        top: 4.5rem;
+    }
+}
+
+@media (max-width: 900px) and (orientation: portrait) {
+    .lc-reel.is-live .lc-reel-stage {
+        margin-left: calc(-1 * var(--pad-x));
+        margin-right: calc(-1 * var(--pad-x));
+    }
+
+    .lc-reel.is-live .lc-reel-screen {
+        height: calc(100vh - 4.5rem);
+        height: calc(100svh - 4.5rem);
+        max-height: none;
+        aspect-ratio: auto;
+    }
+
+    .lc-reel.is-live .lc-reel-run {
+        height: calc(var(--beats, 4) * 38vh);
+    }
+
+    .lc-shot img,
+    .lc-shot video {
+        object-position: var(--pos-narrow, 50% 50%);
+    }
+
+    .lc-section .lc-reel.is-live .lc-reel-caps {
+        left: 1.25rem;
+        right: 1.25rem;
+        bottom: 1.75rem;
+        font-size: 1.35rem;
+    }
+
+    .lc-reel.is-live .lc-cap {
+        max-width: none;
+    }
+}
+
+/* ── THE PENMANSHIP PORTRAIT ──
+   The man reading. On wide screens it stays beside the book pages. */
+.lc-pen-portrait {
+    max-width: 22rem;
+    margin: 0 0 2.5rem;
+}
+
+.lc-pen-portrait img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
+    object-position: 50% 66%;
+}
+
+@media (max-width: 900px) {
+    .lc-section > .lc-pen-portrait {
+        max-width: none;
+    }
+}
+
+@media (min-width: 1360px) {
+    .lc-pen {
+        display: grid;
+        grid-template-columns: minmax(0, 43rem) minmax(0, 1fr);
+        column-gap: 3rem;
+        align-items: start;
+    }
+
+    .lc-pen > * {
+        grid-column: 1;
+    }
+
+    .lc-pen > .lc-pen-portrait {
+        position: sticky;
+        top: 7rem;
+        grid-column: 2;
+        grid-row: 1 / span 3;
+        max-width: none;
+        margin: .6rem 0 0;
+    }
+
+    .lc-pen > .lc-pen-portrait img {
+        aspect-ratio: 9 / 16;
+        object-position: 50% 50%;
+    }
+}
+
+/* ── CLIPS OUTSIDE THE REEL ── */
+.lc-clip {
+    margin: 0;
+    overflow: hidden;
+    background: var(--lc-frame);
+}
+
+.lc-clip[hidden] {
+    display: none;
+}
+
+.lc-clip video {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* The Preservation: the archivist beside the text, once the clip has a link */
+.lc-pres-row p {
+    max-width: 43rem;
+}
+
+.lc-pres-row.has-clip {
+    display: grid;
+    grid-template-columns: 14rem minmax(0, 30rem);
+    column-gap: 3rem;
+    align-items: center;
+}
+
+.lc-pres-clip {
+    aspect-ratio: 9 / 16;
+}
+
+@media (max-width: 900px) {
+    .lc-pres-row.has-clip {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .lc-pres-clip {
+        width: 100%;
+        aspect-ratio: 4 / 5;
+    }
+}
+
+/* ── CHAPTER NUMERALS ──
+   Each part carries the numeral it has in the contents. */
+.lc-page {
+    counter-reset: lc-chapter;
+}
+
+.lc-section > h2::before,
+.lc-pricing h2::before {
+    counter-increment: lc-chapter;
+    content: counter(lc-chapter, upper-roman);
+    content: counter(lc-chapter, upper-roman) / "";
+    display: block;
+    margin-bottom: .55rem;
+    color: var(--lc-faint);
+    font-size: 1.05rem;
+    letter-spacing: .14em;
+    line-height: 1;
+}
+
 /* ============================================================
    RESPONSIVE
    ============================================================ */

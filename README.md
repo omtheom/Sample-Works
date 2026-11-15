@@ -27,3 +27,24 @@ The Book shows the cover as a hardcover built in CSS (boards, spine, page edges,
 ## Competitor prices
 
 From each provider's own pricing page, checked October 2026. Update the table rows in `custom-block.html` if they change, then run `python3 build.py`.
+
+## Media
+
+`media/` holds web-ready copies of the photos and clips: clips are silent, 720px wide, and loop without a visible jump. The page cannot load files from this folder; each file must be uploaded to the GoHighLevel media library.
+
+Six of them are switched on by pasting their links into the `LC_MEDIA` block at the top of `custom-block.html`. A line left empty keeps that clip or photo off, and the page still works.
+
+| File | Line in `LC_MEDIA` | Where it shows |
+|------|--------------------|----------------|
+| `06-crew-softbox.mp4` | `softbox` | The Filmmaking |
+| `07-camera-operator.mp4` | `operator` | The Filmmaking |
+| `08-focus-ring.mp4` | `focus` | The Filmmaking |
+| `09-car-ride.mp4` | `carRide` | The Filmmaking |
+| `05-interview.jpg` | `interview` | The Filmmaking |
+| `10-archiving.mp4` | `archiving` | The Preservation |
+
+Files `01` to `04` are lighter copies of photos already linked in the page from the media library.
+
+## The Filmmaking sequence
+
+The section's paragraph is told as a film: the screen holds in place while the shots change, and each sentence appears as a caption. The order is set by `data-beats-wide` (desktop, where clips share the screen side by side) and `data-beats-narrow` (a phone held upright, one shot at a time), written as `shot:sentence`. Shots with no link are skipped. Without scripts it is one photo with the paragraph under it; with reduced motion the clips stay still.

@@ -11,6 +11,23 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 
+<!-- ============================================================
+     MEDIA LINKS
+     Upload a file to the media library, then paste its link between
+     the quotes on its line. A line left empty keeps that clip or
+     photo switched off; the page works either way.
+     ============================================================ -->
+<script>
+window.LC_MEDIA = {
+  softbox:   "",   // 06-crew-softbox.mp4      The Filmmaking
+  operator:  "",   // 07-camera-operator.mp4   The Filmmaking
+  focus:     "",   // 08-focus-ring.mp4        The Filmmaking
+  carRide:   "",   // 09-car-ride.mp4          The Filmmaking
+  interview: "",   // 05-interview.jpg         The Filmmaking
+  archiving: ""    // 10-archiving.mp4         The Preservation
+};
+</script>
+
 <!-- NAVIGATION (same as mapelfirm.com, plus the theme switch) -->
 <nav id="siteNav">
   <a href="https://mapelfirm.com" class="nav-logo" style="display:inline-flex;align-items:center;gap:.6rem;flex-wrap:nowrap;">
@@ -82,13 +99,44 @@
       <!-- 1. THE FILMMAKING (the film itself plays in the opening above) -->
       <section class="lc-section" id="filmmaking">
         <h2>The Filmmaking</h2>
-        <p>Five sessions of four to five hours each, at the times and in the place that suit your father or mother. Between sessions, our crew quietly follows their day. The film then shows not only what they say, but the life they live.</p>
+
+        <!-- The section's paragraph, told as a film. The screen holds still while the
+             shots change, and each sentence appears as a caption. "Beats" list the
+             shots in order as shot:sentence; shots joined with + share the screen.
+             Shots whose link is missing above are skipped. Without scripts this is
+             one photo with the paragraph under it. -->
+        <div class="lc-reel lc-wide"
+             data-beats-wide="softbox+operator+focus:0 chairEmpty:0 chairSession:0 carRide+car:1 interview:2 car:2"
+             data-beats-narrow="softbox:0 operator:0 focus:0 chairEmpty:0 chairSession:0 carRide:1 interview:2 car:2">
+          <div class="lc-reel-stage">
+            <div class="lc-reel-screen">
+              <figure class="lc-shot" data-shot="softbox" data-kind="clip" data-alt="Two crew members adjusting a light on set"></figure>
+              <figure class="lc-shot" data-shot="operator" data-kind="clip" data-alt="A camera operator framing the empty chair"></figure>
+              <figure class="lc-shot" data-shot="focus" data-kind="clip" data-alt="A hand turning the focus ring of a camera lens"></figure>
+              <figure class="lc-shot" data-shot="chairEmpty" style="--pos-narrow: 66% 50%"><img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6acbe5a6bd6bb710ca4f72e5.png" alt="The empty chair on set, lit and waiting before a session" decoding="async"></figure>
+              <figure class="lc-shot" data-shot="chairSession" data-dissolve data-static style="--pos-narrow: 66% 50%"><img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6acbe5a6bd6bb710ca4f72db.png" alt="The same chair during a session: an older man seated and speaking, with lights and a microphone around him" decoding="async"></figure>
+              <figure class="lc-shot" data-shot="carRide" data-kind="clip" data-alt="The man in the back seat of a car, working on a tablet as the city passes" style="--pos-wide: 22% 50%; --pos-narrow: 12% 50%"></figure>
+              <figure class="lc-shot" data-shot="car" data-weight="2" style="--pos-wide: 34% 50%; --pos-narrow: 38% 50%"><img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6acbe5a64770fb500bf57a39.png" alt="The man in a suit in the back seat of a car, looking out at the rain" loading="lazy" decoding="async"></figure>
+              <figure class="lc-shot" data-shot="interview" data-kind="photo" data-alt="The man speaking during a session, with the camera in the foreground" style="--pos-narrow: 33% 50%"></figure>
+              <div class="lc-reel-bars" aria-hidden="true"></div>
+            </div>
+            <p class="lc-reel-caps">
+              <span class="lc-cap">Five sessions of four to five hours each, at the times and in the place that suit your father or mother.</span>
+              <span class="lc-cap">Between sessions, our crew quietly follows their day.</span>
+              <span class="lc-cap">The film then shows not only what they say, but the life they live.</span>
+            </p>
+          </div>
+          <div class="lc-reel-run" aria-hidden="true"></div>
+        </div>
       </section>
 
       <!-- 2. TEXT -->
-      <section class="lc-section" id="penmanship">
+      <section class="lc-section lc-pen" id="penmanship">
         <h2>The Penmanship</h2>
         <p>Every word in the book is theirs. We shape only the structure, the grammar and the flow, so it reads well on the page. The voice your family knows stays exactly as it is.</p>
+        <figure class="lc-pen-portrait">
+          <img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6accfea904c496731f32f3e5.png" alt="The man at home, reading a book in an armchair beside a lamp and bookshelves" width="941" height="1672" loading="lazy" decoding="async">
+        </figure>
 
         <!-- Sample pages from a book, one page at a time. Names are empty black boxes; the names are not in this file. -->
         <div class="lc-book lc-carousel" id="penmanship-pages" aria-roledescription="carousel" aria-label="Sample pages from a book">
@@ -241,7 +289,10 @@
         <figure class="lc-photo lc-wide">
           <img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6ad8c8d33be7ffaf0d499fcc.png" alt="The Preservation" loading="lazy">
         </figure>
-        <p>Their story is kept in three countries, so that it outlives us all. Your family receives a preservation certificate, and any member of the family can ask to see it at any time.</p>
+        <div class="lc-pres-row lc-wide">
+          <figure class="lc-clip lc-pres-clip" data-media="archiving" data-alt="An archivist examining strips of film through a loupe on a lightbox" hidden></figure>
+          <p>Their story is kept in three countries, so that it outlives us all. Your family receives a preservation certificate, and any member of the family can ask to see it at any time.</p>
+        </div>
       </section>
 
     </main>
@@ -450,6 +501,215 @@
       if (s) observer.observe(s);
     });
   }
+
+  // ─── Clips: silent, looping, and loaded only when they are about to be seen ───
+  var MEDIA = window.LC_MEDIA || {};
+  var calmMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function makeClip(link, label) {
+    var v = document.createElement('video');
+    v.muted = true; v.defaultMuted = true; v.loop = true; v.playsInline = true;
+    v.setAttribute('muted', ''); v.setAttribute('loop', ''); v.setAttribute('playsinline', '');
+    v.setAttribute('disablepictureinpicture', '');
+    v.preload = 'none';
+    v.setAttribute('data-src', link);
+    if (label) v.setAttribute('aria-label', label);
+    return v;
+  }
+  function loadClip(v) {
+    if (v.getAttribute('src') || !v.getAttribute('data-src')) return;
+    v.preload = 'auto';
+    v.src = v.getAttribute('data-src') + '#t=0.01';   // shows a frame before it plays
+  }
+  // With reduced motion the clip loads its first frame and stays still
+  function playClip(v) {
+    loadClip(v);
+    if (calmMotion) return;
+    var started = v.play();
+    if (started && started.catch) started.catch(function () {});
+  }
+
+  // A clip outside the reel switches on when its link is in LC_MEDIA
+  Array.prototype.slice.call(document.querySelectorAll('.lc-clip[data-media]')).forEach(function (fig) {
+    var link = MEDIA[fig.getAttribute('data-media')];
+    if (!link) return;
+    var v = makeClip(link, fig.getAttribute('data-alt'));
+    fig.appendChild(v);
+    fig.hidden = false;
+    fig.parentNode.classList.add('has-clip');
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        if (entries[0].isIntersecting) playClip(v); else v.pause();
+      }, { threshold: 0.25 }).observe(fig);
+    } else {
+      playClip(v);
+    }
+  });
+
+  // ─── The Filmmaking reel: the screen holds while the shots change; each sentence is a caption ───
+  (function () {
+    var reel = document.querySelector('.lc-reel');
+    if (!reel) return;
+    var stage = reel.querySelector('.lc-reel-stage');
+    var barsEl = reel.querySelector('.lc-reel-bars');
+    var caps = Array.prototype.slice.call(reel.querySelectorAll('.lc-cap'));
+    var tall = window.matchMedia('(max-width: 900px) and (orientation: portrait)');
+    var shots = {}, order = [];
+
+    // Shots with media stay; a shot waiting for a link takes it from LC_MEDIA or is dropped
+    Array.prototype.slice.call(reel.querySelectorAll('.lc-shot')).forEach(function (fig) {
+      var key = fig.getAttribute('data-shot');
+      if (!fig.firstElementChild) {
+        var link = MEDIA[key], el;
+        if (!link) { fig.parentNode.removeChild(fig); return; }
+        if (fig.getAttribute('data-kind') === 'clip') {
+          el = makeClip(link, fig.getAttribute('data-alt'));
+        } else {
+          el = document.createElement('img');
+          el.alt = fig.getAttribute('data-alt') || '';
+          el.decoding = 'async';
+          el.src = link;
+        }
+        fig.appendChild(el);
+      }
+      shots[key] = fig;
+      order.push(key);
+    });
+    if (!order.length) return;
+
+    var beats = [], bars = [], current = -1, leaveTimer = null, near = false, stickTop = 0, queued = false;
+
+    function clipOf(key) { return shots[key].querySelector('video'); }
+
+    function show(i) {
+      if (i === current || !beats[i]) return;
+      var beat = beats[i], prev = beats[current];
+      current = i;
+
+      // Shots that share the screen sit side by side, split by their weights
+      var total = 0, x = 0, place = {}, gap = beat.keys.length > 1 ? 3 : 0;
+      beat.keys.forEach(function (k) { total += parseFloat(shots[k].getAttribute('data-weight')) || 1; });
+      beat.keys.forEach(function (k, n) {
+        var w = (parseFloat(shots[k].getAttribute('data-weight')) || 1) / total;
+        place[k] = { x: x, w: w, l: n === 0 ? 0 : gap / 2, r: n === beat.keys.length - 1 ? 0 : gap / 2 };
+        x += w;
+      });
+
+      order.forEach(function (k) {
+        var fig = shots[k], at = place[k], clip = clipOf(k);
+        if (at) {
+          fig.style.left = 'calc(' + (at.x * 100).toFixed(3) + '% + ' + at.l + 'px)';
+          fig.style.width = 'calc(' + (at.w * 100).toFixed(3) + '% - ' + (at.l + at.r) + 'px)';
+          fig.style.zIndex = 2;
+          fig.classList.remove('is-leaving');
+          fig.classList.add('is-on');
+          if (clip && near) playClip(clip);
+        } else if (prev && prev.keys.indexOf(k) !== -1) {
+          // The outgoing shot stays underneath until the new one has faded in over it
+          fig.style.zIndex = 1;
+          fig.classList.remove('is-on');
+          fig.classList.add('is-leaving');
+        } else {
+          fig.style.zIndex = '';
+          fig.classList.remove('is-on');
+          fig.classList.remove('is-leaving');
+          if (clip) clip.pause();
+        }
+      });
+
+      clearTimeout(leaveTimer);
+      leaveTimer = setTimeout(function () {
+        order.forEach(function (k) {
+          var fig = shots[k];
+          if (!fig.classList.contains('is-leaving')) return;
+          fig.classList.remove('is-leaving');
+          if (clipOf(k)) clipOf(k).pause();
+        });
+      }, 1900);
+
+      caps.forEach(function (c, j) { c.classList.toggle('is-on', j === beat.cap); });
+    }
+
+    function update() {
+      queued = false;
+      if (!beats.length) return;
+      var r = reel.getBoundingClientRect();
+      var run = r.height - stage.offsetHeight;
+      var t = run > 0 ? Math.max(0, Math.min(1, (stickTop - r.top) / run)) : 0;
+      var f = t * beats.length, i = Math.min(beats.length - 1, Math.floor(f));
+      show(i);
+      bars.forEach(function (b, j) {
+        b.style.setProperty('--fill', j < i ? '1' : j > i ? '0' : Math.min(1, f - i).toFixed(3));
+      });
+    }
+
+    // Wide screens can show several clips side by side; a phone held upright shows one at a time
+    function build() {
+      var spec = reel.getAttribute(tall.matches ? 'data-beats-narrow' : 'data-beats-wide') || '';
+      var all = spec.trim().split(/\s+/).map(function (token) {
+        var parts = token.split(':');
+        return {
+          keys: parts[0].split('+').filter(function (k) { return shots[k]; }),
+          cap: parseInt(parts[1], 10) || 0
+        };
+      }).filter(function (b) { return b.keys.length; });
+      // A sentence whose own shots are all missing borrows the shots of the next beat
+      caps.forEach(function (c, j) {
+        if (!all.length || all.some(function (b) { return b.cap === j; })) return;
+        var at = 0;
+        while (at < all.length && all[at].cap < j) at++;
+        var donor = all[Math.min(at, all.length - 1)];
+        all.splice(at, 0, { keys: donor.keys.slice(), cap: j });
+      });
+      // Two beats left identical by a missing link count once
+      beats = all.filter(function (b, n) {
+        var p = all[n - 1];
+        return !(p && p.cap === b.cap && p.keys.join() === b.keys.join());
+      });
+      reel.style.setProperty('--beats', beats.length);
+      barsEl.innerHTML = '';
+      bars = beats.map(function () { var bar = document.createElement('i'); barsEl.appendChild(bar); return bar; });
+      order.forEach(function (k) {
+        shots[k].classList.remove('is-on');
+        shots[k].classList.remove('is-leaving');
+        shots[k].style.zIndex = '';
+      });
+      current = -1;
+      stickTop = parseFloat(getComputedStyle(stage).top) || 0;
+      update();
+    }
+
+    reel.classList.add('is-live');
+    build();
+
+    window.addEventListener('scroll', function () {
+      if (queued) return;
+      queued = true;
+      requestAnimationFrame(update);
+    }, { passive: true });
+    window.addEventListener('resize', function () {
+      stickTop = parseFloat(getComputedStyle(stage).top) || 0;
+      update();
+    });
+    if (tall.addEventListener) tall.addEventListener('change', build);
+    else if (tall.addListener) tall.addListener(build);
+
+    // Clips load as the reel comes near and stop when it is well out of view
+    if ('IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        near = entries[0].isIntersecting;
+        order.forEach(function (k) {
+          var clip = clipOf(k);
+          if (!clip) return;
+          if (!near) { clip.pause(); return; }
+          loadClip(clip);
+          if (shots[k].classList.contains('is-on')) playClip(clip);
+        });
+      }, { rootMargin: '100% 0px 100% 0px' }).observe(reel);
+    } else {
+      near = true;
+    }
+  })();
 
   // ─── Reading progress in the contents, and a slow drift on the preservation photo ───
   (function () {
