@@ -20,7 +20,7 @@
 <!-- Google Fonts (safe to leave here; GHL will dedupe if already loaded) -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Jost:wght@500&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&display=swap" rel="stylesheet">
 
 <!-- NAVIGATION (same as mapelfirm.com, plus the theme switch) -->
 <nav id="siteNav">
@@ -46,7 +46,7 @@
 </nav>
 
 <!-- MOBILE MENU -->
-<div class="mobile-menu" id="mobileMenu" aria-hidden="true">
+<div class="mobile-menu" id="mobileMenu" aria-hidden="true" inert>
   <ul>
     <li><a href="https://mapelfirm.com/#legacy">Legacy</a></li>
     <li><a href="https://mapelfirm.com/#method">Method</a></li>
@@ -99,13 +99,13 @@
         <p>Every word in the book is theirs. We shape only the structure, the grammar and the flow, so it reads well on the page. The voice your family knows stays exactly as it is.</p>
 
         <!-- Sample pages from a book, one page at a time. Names are empty black boxes; the names are not in this file. -->
-        <div class="lc-book lc-carousel" aria-roledescription="carousel" aria-label="Sample pages from a book">
+        <div class="lc-book lc-carousel" id="penmanship-pages" aria-roledescription="carousel" aria-label="Sample pages from a book">
           <p class="lc-book-quote" aria-hidden="true">&ldquo;</p>
           <div class="lc-book-viewport">
             <div class="lc-carousel-track lc-book-track" tabindex="0">
               <div class="lc-book-page">
-                <h4>Old Town, Mombasa</h4>
-                <p class="lc-cont">My uncle&rsquo;s house was in Old Town, next to the old harbour. His children, my mother and my brother <span class="lc-redacted" style="width:2.5em" aria-label="Redacted"></span> and my two sisters <span class="lc-redacted" style="width:2.5em" aria-label="Redacted"></span> and <span class="lc-redacted" style="width:3.0em" aria-label="Redacted"></span>, his other sister who had been divorced and came with her own child. I don&rsquo;t know the exact count on any given day because it shifted. Eleven children I remember, in a house built for fewer. There were four of us in one room with two bunk beds. His two sons, my brother, and me. The room was so tiny, you turned in the bed at night and knew someone was beside you or above you.</p>
+                <h3>Old Town, Mombasa</h3>
+                <p class="lc-cont">My uncle&rsquo;s house was in Old Town, next to the old harbour. His children, my mother and my brother <span class="lc-redacted" role="img" style="width:2.5em" aria-label="Redacted"></span> and my two sisters <span class="lc-redacted" role="img" style="width:2.5em" aria-label="Redacted"></span> and <span class="lc-redacted" role="img" style="width:3.0em" aria-label="Redacted"></span>, his other sister who had been divorced and came with her own child. I don&rsquo;t know the exact count on any given day because it shifted. Eleven children I remember, in a house built for fewer. There were four of us in one room with two bunk beds. His two sons, my brother, and me. The room was so tiny, you turned in the bed at night and knew someone was beside you or above you.</p>
                 <p>My uncle was very generous. Although he treated his children and us the same, there were difficulties. I won&rsquo;t say there were no difficulties. When you have eleven children in a small house, there are complications. He was very, very strict about prayers. He had a cane and if he caned you, it left a mark on your hand. Every morning before Fajr he would walk through and call our names. He would pass again on his way to the mosque and call them a second time. If you were not up, the next thing was kiboko. That is how he made sure we prayed. And he instilled in me the religious values I have carried my whole life.</p>
                 <p>After he disciplined you, he would give you chocolate. That one bar of chocolate would be shared among eight children. You took your portion and you were grateful. When you have grown up sharing one piece of chocolate eight ways, you carry that with you. You know what it means to take your small piece and be satisfied. That is something you cannot learn any other way.</p>
                 <p>My mother had nothing except her will to fight and she fought for us. When the doctor prescribed a tablet, she would take half. She would split it with her fingers and take one half and save the other for later. The whole tablet cost more than she could spend in one day.</p>
@@ -114,10 +114,10 @@
                 <p class="lc-book-folio">1</p>
               </div>
               <div class="lc-book-page">
-                <p class="lc-book-running"><span class="lc-redacted" style="width:4em" aria-label="Redacted"></span></p>
+                <p class="lc-book-running"><span class="lc-redacted" role="img" style="width:4em" aria-label="Redacted"></span></p>
                 <p class="lc-cont">Some days I would not come home for lunch because the distance was too much. On those days my mother came to school herself with whatever she had brought, and she would sit there and make sure I ate.</p>
-                <p>A penny in the morning. Five cents in the afternoon. At that time a penny bought you a bowl of potatoes and crisps from the small vendors near school. Bread was sixty cents a kilo and meat was one shilling fifty. From the age of four until I became a partner at <span class="lc-redacted" style="width:4.3em" aria-label="Redacted"></span> and Company, life was very, very tough. I don&rsquo;t pray for anybody to live a life like that. But it was my life. And the living of it instilled things in me that nothing else could have put there.</p>
-                <p>There was a teacher at Kaloleni called Mr. <span class="lc-redacted" style="width:6.6em" aria-label="Redacted"></span>. He was a Goan man. My mother went to him when I was in Standard Seven. She spoke to him and told him that I was her only son and she depended on me. Hearing those words from my mother made Mr. <span class="lc-redacted" style="width:3.9em" aria-label="Redacted"></span> feel pity for her. From that day he made sure I studied. He checked on me, he followed up, he kept the teachers paying attention to me. He took on something that no school structure required of him.</p>
+                <p>A penny in the morning. Five cents in the afternoon. At that time a penny bought you a bowl of potatoes and crisps from the small vendors near school. Bread was sixty cents a kilo and meat was one shilling fifty. From the age of four until I became a partner at <span class="lc-redacted" role="img" style="width:4.3em" aria-label="Redacted"></span> and Company, life was very, very tough. I don&rsquo;t pray for anybody to live a life like that. But it was my life. And the living of it instilled things in me that nothing else could have put there.</p>
+                <p>There was a teacher at Kaloleni called Mr. <span class="lc-redacted" role="img" style="width:6.6em" aria-label="Redacted"></span>. He was a Goan man. My mother went to him when I was in Standard Seven. She spoke to him and told him that I was her only son and she depended on me. Hearing those words from my mother made Mr. <span class="lc-redacted" role="img" style="width:3.9em" aria-label="Redacted"></span> feel pity for her. From that day he made sure I studied. He checked on me, he followed up, he kept the teachers paying attention to me. He took on something that no school structure required of him.</p>
                 <p>I was a very, very naughty child. Super naughty. My mother always believed my brother would do everything because he was calm and steady. I was neither calm nor steady about anything. As it turned out, she was right about the child I was, but wrong about what it meant. I have found that, more often than not, the naughty and rebellious child becomes the one who builds something in life. The calm child studies, becomes a doctor or an engineer, gets a good job and follows the system. The rebellious child looks at the system and wants to change it. Sometimes, the qualities that make a child difficult to manage are the same qualities that later make him willing to take risks, challenge what exists and build something of his own.</p>
                 <p>One afternoon coming from school I passed a man carrying his tray of mandazis on his head. I knocked it down. The tray, the mandazis, everything fell on the ground. He got angry and we fought, right there in the road. In our community at that time, any elder in the street had authority over you. If you misbehaved in front of someone your father&rsquo;s age, they dealt with you on the spot. And if you were foolish enough to go home afterward and report what had happened, your parents would beat you a second time for whatever you had done to deserve the first.</p>
                 <p>The child who told his mother a stranger had slapped him was confessing to a crime. Every adult in the street was responsible for every child in the street. Children belonged to the whole community, not just to their own households. That was not a rule that was written down anywhere. It was simply how the community understood itself.</p>
@@ -138,31 +138,31 @@
                 <p class="lc-book-folio">3</p>
               </div>
               <div class="lc-book-page">
-                <p class="lc-book-running"><span class="lc-redacted" style="width:4em" aria-label="Redacted"></span></p>
-                <p>In other words, she passed their regards to the money in the safe in my house. She knew that was what their regards were for. That was <span class="lc-redacted" style="width:4.3em" aria-label="Redacted"></span>. She chose her words carefully, but she never became bitter about how they had treated her.</p>
+                <p class="lc-book-running"><span class="lc-redacted" role="img" style="width:4em" aria-label="Redacted"></span></p>
+                <p>In other words, she passed their regards to the money in the safe in my house. She knew that was what their regards were for. That was <span class="lc-redacted" role="img" style="width:4.3em" aria-label="Redacted"></span>. She chose her words carefully, but she never became bitter about how they had treated her.</p>
                 <p>I sat the Standard Eight examinations and the results gave me a choice. Three secondary schools. Technical High School, Allidina Visram, MIOME — the Mombasa Institute of Muslim Education. Allidina was the best school at that time and my marks had earned it.</p>
-                <p>I walked to school every morning at quarter to seven. I had managed on a penny and five cents a day. I had gotten into fights at the roadside. I had taken a burning cigarette into my pocket rather than be seen by my uncle. And I had passed. My mother had stood before <span class="lc-redacted" style="width:6.6em" aria-label="Redacted"></span> and told him I was her only son and she depended on me. She said it because it was true and because it was the only resource she had. She was building my education one conversation at a time. One half-tablet at a time. Because the money was not there to build it any other way. I did not disappoint her. I have tried, across everything that came after, not to.</p>
-                <h4>Allidina and London</h4>
-                <p class="lc-cont">Allidina was the best school in Mombasa at the time. The teachers in those days were expatriates. The principal was Mr. <span class="lc-redacted" style="width:2.5em" aria-label="Redacted"></span> and when he retired, Mr. <span class="lc-redacted" style="width:3.4em" aria-label="Redacted"></span> took over. We joined secondary school when we were teanagers and by the time we reached Form Six, we looked like full grown men. When the Form One students arrived, we looked at them and saw small children.</p>
+                <p>I walked to school every morning at quarter to seven. I had managed on a penny and five cents a day. I had gotten into fights at the roadside. I had taken a burning cigarette into my pocket rather than be seen by my uncle. And I had passed. My mother had stood before <span class="lc-redacted" role="img" style="width:6.6em" aria-label="Redacted"></span> and told him I was her only son and she depended on me. She said it because it was true and because it was the only resource she had. She was building my education one conversation at a time. One half-tablet at a time. Because the money was not there to build it any other way. I did not disappoint her. I have tried, across everything that came after, not to.</p>
+                <h3>Allidina and London</h3>
+                <p class="lc-cont">Allidina was the best school in Mombasa at the time. The teachers in those days were expatriates. The principal was Mr. <span class="lc-redacted" role="img" style="width:2.5em" aria-label="Redacted"></span> and when he retired, Mr. <span class="lc-redacted" role="img" style="width:3.4em" aria-label="Redacted"></span> took over. We joined secondary school when we were teanagers and by the time we reached Form Six, we looked like full grown men. When the Form One students arrived, we looked at them and saw small children.</p>
                 <p>I borrowed books throughout my secondary school because my mother could not afford to buy them. I always returned them carefully as they were not mine to damage. Maths was easy for me. It had always been easy. Even now, at this age, I am good with numbers. I can look at a calculation, a quotation, a column of figures, and know before I have finished reading it that something is wrong. I send it back and say, &ldquo;Go and check this. Something is wrong here.&rdquo; That instinct started when I was young and stayed with me. Physics was different. Science had defeated me throughout my primary school. I never found my way into it. English was fine. Biology was fine. But Physics was where I struggled.</p>
                 <p>We were also extremely naughty at Allidina. During break, we would go to an Arab shop near the school. That was where the smoking happened. I had started at Kaloleni with a packet hidden in a tree. By the time I reached Allidina, the habit was firmly established.</p>
-                <p>There was a boy in our group called <span class="lc-redacted" style="width:3.9em" aria-label="Redacted"></span> who had a reputation for being the most mischievous. A real troublemaker. One day the teacher called <span class="lc-redacted" style="width:2.1em" aria-label="Redacted"></span> and frisked him, reaching into <span class="lc-redacted" style="width:2.1em" aria-label="Redacted"></span>&rsquo;s short pants pocket to look for cigarettes or a matchbox. The teacher&rsquo;s hand went in and came out empty on the other side. <span class="lc-redacted" style="width:2.1em" aria-label="Redacted"></span> had cut the bottom of his school shorts</p>
+                <p>There was a boy in our group called <span class="lc-redacted" role="img" style="width:3.9em" aria-label="Redacted"></span> who had a reputation for being the most mischievous. A real troublemaker. One day the teacher called <span class="lc-redacted" role="img" style="width:2.1em" aria-label="Redacted"></span> and frisked him, reaching into <span class="lc-redacted" role="img" style="width:2.1em" aria-label="Redacted"></span>&rsquo;s short pants pocket to look for cigarettes or a matchbox. The teacher&rsquo;s hand went in and came out empty on the other side. <span class="lc-redacted" role="img" style="width:2.1em" aria-label="Redacted"></span> had cut the bottom of his school shorts</p>
                 <p class="lc-book-folio">4</p>
               </div>
               <div class="lc-book-page">
                 <p class="lc-book-running">Fatherless</p>
-                <p class="lc-cont">pocket open. Clean hands, no evidence. <span class="lc-redacted" style="width:2.1em" aria-label="Redacted"></span> went on to represent East Africa in cricket, one of the best they ever produced.</p>
-                <p>When I was in Form Two, I came to school one day and found a new sports teacher had been posted to Allidina. His name was <span class="lc-redacted" style="width:6.6em" aria-label="Redacted"></span>. The same man. The Goan teacher from Kaloleni Primary School. Of all the schools in Mombasa the transfer order might have sent him to, he had been sent to mine. And just as he had done at Kaloleni, he started watching over me again. He kept the teachers paying attention to me. He made sure I did not fall behind. I have never found a satisfying explanation for that except that it was all by destiny.</p>
+                <p class="lc-cont">pocket open. Clean hands, no evidence. <span class="lc-redacted" role="img" style="width:2.1em" aria-label="Redacted"></span> went on to represent East Africa in cricket, one of the best they ever produced.</p>
+                <p>When I was in Form Two, I came to school one day and found a new sports teacher had been posted to Allidina. His name was <span class="lc-redacted" role="img" style="width:6.6em" aria-label="Redacted"></span>. The same man. The Goan teacher from Kaloleni Primary School. Of all the schools in Mombasa the transfer order might have sent him to, he had been sent to mine. And just as he had done at Kaloleni, he started watching over me again. He kept the teachers paying attention to me. He made sure I did not fall behind. I have never found a satisfying explanation for that except that it was all by destiny.</p>
                 <p>When the Form Four results came, my uncle did not believe them. I had not studied particularly hard. I sat the examinations and wrote what I knew. The marks came back as first-grade marks, but the certificate showed a second grade. This was because there was a rule at the time. If you had a credit in English rather than a distinction, you could not receive a first grade, regardless of how well you had done in the other subjects. My English was a credit so the certificate showed a second grade.</p>
                 <p>Of all the marks I scored in each subject, the Gujarati result remains a mystery to me. I could neither speak Gujarati nor write it. It was not a language I used in daily life. I sat the examination and came back with a distinction. My own feeling was that the examiner must have been a British expatriate, someone who could mark the paper for structure and form without knowing the language himself. If someone who truly knew Gujarati had read my answers, there was no way I would have received a distinction.</p>
-                <p>My uncle had promised that if I passed, he would send me to do my higher education in the United Kingdom. He was a perfect gentleman, the results were in front of him, and he kept his word. Around the same time, two of my friends joined the Kenya Air Force. One was <span class="lc-redacted" style="width:6.2em" aria-label="Redacted"></span>. <span class="lc-redacted" style="width:3.0em" aria-label="Redacted"></span> went on to hold a senior position in the Air Force before he retired. We had talked about joining together and it was a serious consideration at the time. But my uncle had made his promise, and I had already made a promise to myself that I wanted London.</p>
-                <p>I had grown up watching aircraft, and the idea of aeronautical engineering had taken hold of me. A well-paying job meant security for my family, for my mother, my sisters and my brother. So when <span class="lc-redacted" style="width:3.0em" aria-label="Redacted"></span> and the others went one way, I went the other.</p>
+                <p>My uncle had promised that if I passed, he would send me to do my higher education in the United Kingdom. He was a perfect gentleman, the results were in front of him, and he kept his word. Around the same time, two of my friends joined the Kenya Air Force. One was <span class="lc-redacted" role="img" style="width:6.2em" aria-label="Redacted"></span>. <span class="lc-redacted" role="img" style="width:3.0em" aria-label="Redacted"></span> went on to hold a senior position in the Air Force before he retired. We had talked about joining together and it was a serious consideration at the time. But my uncle had made his promise, and I had already made a promise to myself that I wanted London.</p>
+                <p>I had grown up watching aircraft, and the idea of aeronautical engineering had taken hold of me. A well-paying job meant security for my family, for my mother, my sisters and my brother. So when <span class="lc-redacted" role="img" style="width:3.0em" aria-label="Redacted"></span> and the others went one way, I went the other.</p>
                 <p>I was admitted to Loughborough College of Technology. In 1963, I left Mombasa. London at the time was a different place from the London we know now. When we arrived, some people thought we were coming from the jungle. They seemed to believe Africa meant animals everywhere and people living in the bush. That was the Africa they had read and heard about from their countrymen.</p>
                 <p>I had grown up in Mombasa. It was very beautiful in those days. A harbour city with centuries of trade linking it to India, Arabia and the East African coast. Monsoon winds had</p>
                 <p class="lc-book-folio">5</p>
               </div>
               <div class="lc-book-page">
-                <p class="lc-book-running"><span class="lc-redacted" style="width:4em" aria-label="Redacted"></span></p>
+                <p class="lc-book-running"><span class="lc-redacted" role="img" style="width:4em" aria-label="Redacted"></span></p>
                 <p class="lc-cont">been carrying ships, merchants and languages into Mombasa for centuries. None of that was visible to the people who looked at us that way.</p>
                 <p>At Loughborough, my fees were being paid by three or four people from Kenya. Some contributed about £25 a month, others £31. My uncle had found them. They were people willing to sponsor a boy from Mombasa who had the marks and needed the opportunity to continue his education. For the first time, the future seemed to be opening up before me.</p>
                 <p>However, it wasn&rsquo;t long before my dream of becoming an aeronautical engineer came to an abrupt end. Six or eight months into my course, two of my sponsors withdrew their support. When the money stopped, so did the course. There was nothing my uncle could do, and there was surely nothing I could do. The opportunity that had brought me to Loughborough was simply no longer there and I had to accept it and move on. I dropped out of college. While my classmates attended lectures and learned about aeroplanes, I stayed in London and found whatever work I could.</p>
@@ -177,7 +177,7 @@
                 <p>When India became independent in 1947, Indians living in Kenya faced a choice. Those who did not take Indian or Pakistani citizenship became, under the British Nationality Act of 1948, Citizens of the United Kingdom and Colonies by Naturalization. They received full British passports. In 1954, my mother registered herself and all four of us children under the law. So I arrived in England holding a document which said, in its quiet official way, that I belonged there as much as anyone else.</p>
                 <p>But I held a Form Six certificate and nothing beyond it. With a Form Six certificate in England in those years, odd jobs were what was available. Without further qualifications, there was no other door. And the money for those qualifications had now disappeared. I had thought about the idea of building my life in the UK but after about two years of deep struggle, I decided to come back home. There was no future for me in London and nothing was keeping me there.</p>
                 <p>When I came back home, I joined my uncle&rsquo;s business. There was no other alternative. With my qualifications, I could not find better employment. My uncle put me on a salary of one or two hundred shillings a month. I was living hand to mouth and could barely afford anything. There were days when I had to beg people for cigarettes because I did not have the money to buy my own.</p>
-                <p>My mother was still in the same house. She was still poor and dependent. I was her hope, the son she had walked to school to bring food to, the boy Mr. <span class="lc-redacted" style="width:3.9em" aria-label="Redacted"></span> had watched over twice. I had gone to London to become an aeronautical engineer and came back with nothing but second-hand shirts from Forest Gate to show for.</p>
+                <p>My mother was still in the same house. She was still poor and dependent. I was her hope, the son she had walked to school to bring food to, the boy Mr. <span class="lc-redacted" role="img" style="width:3.9em" aria-label="Redacted"></span> had watched over twice. I had gone to London to become an aeronautical engineer and came back with nothing but second-hand shirts from Forest Gate to show for.</p>
                 <p>I knew I had to become something. I did not yet know how. It was during this period of struggle, back in Mombasa and working for my uncle that I learned what had happened to my brother. He was visiting a relative whose garden was full of roses. He reached out and picked one. Someone from the house saw him and slapped him for taking it. When this incident happened, it turned the small spark of ambition I carried inside me into a burning determination. I said to myself,</p>
                 <blockquote>&ldquo;To hell with it! This is enough! I can&rsquo;t continue to live like this anymore.&rdquo;</blockquote>
                 <p>It was not about the slap but everything contained in it. What we were to those people. What they thought we would remain. My brother standing in that garden, the son of a widow, without a father and without a family name they respected. That was what they saw when they looked at him. Something settled in me then and never moved again.</p>
@@ -185,12 +185,12 @@
                 <p class="lc-book-folio">7</p>
               </div>
               <div class="lc-book-page">
-                <p class="lc-book-running"><span class="lc-redacted" style="width:4em" aria-label="Redacted"></span></p>
+                <p class="lc-book-running"><span class="lc-redacted" role="img" style="width:4em" aria-label="Redacted"></span></p>
                 <p class="lc-cont">ground up. The people entering government were beginning their own careers. Licences were being issued. Trade was opening. There was room for someone willing to move quickly and take risks.</p>
                 <p>I had one advantage many Asians did not have. I was never afraid of Africans.. I had never lived separately from them in the way many people in our community had. Many Asians kept themselves apart. Some were nervous about independence. Some were uncertain whether there would still be a place for them in Kenya. I had grown up in Old Town with very little. I played cricket in those streets with anyone who wanted to play. I was used to mixing freely, talking to anyone and forming friendships across lines other people saw as barriers.</p>
                 <p>When independence came, my refusal to judge people by their race helped me build relationships that became the foundation of everything I built. I cultivated the relationships I had formed with people who were becoming important in the new Kenya. I never stopped knowing them and never did I look past someone because of what they were at the moment I met them. And they remembered me. That became my stepping stone.</p>
                 <p>Only much later, looking back at everything which followed, did I understand what the loss of the Loughborough fees had meant. If those sponsors had continued paying, I would have graduated and become an aeronautical engineer. I would have spent my life servicing aircraft for people who flew in them.</p>
-                <p>Instead, the door in England closed and another door opened. <span class="lc-redacted" style="width:8.4em" aria-label="Redacted"></span> the ships, the parliament, the glass plant. Each opportunity came because the previous path had ended. What felt like failure at the time turned out to be a blessing in disguise. Years later, my business partner <span class="lc-redacted" style="width:3.4em" aria-label="Redacted"></span> bought the very same house where <span class="lc-redacted" style="width:2.5em" aria-label="Redacted"></span> had once plucked a rose and been slapped for it.</p>
+                <p>Instead, the door in England closed and another door opened. <span class="lc-redacted" role="img" style="width:8.4em" aria-label="Redacted"></span> the ships, the parliament, the glass plant. Each opportunity came because the previous path had ended. What felt like failure at the time turned out to be a blessing in disguise. Years later, my business partner <span class="lc-redacted" role="img" style="width:3.4em" aria-label="Redacted"></span> bought the very same house where <span class="lc-redacted" role="img" style="width:2.5em" aria-label="Redacted"></span> had once plucked a rose and been slapped for it.</p>
                 <p class="lc-book-folio">8</p>
               </div>
             </div>
@@ -203,17 +203,44 @@
         </div>
       </section>
 
-      <!-- 3. BOOK COVER, shown at its own portrait shape -->
+      <!-- 3. THE BOOK, as a hardcover you can turn and open -->
       <section class="lc-section" id="book">
         <h2>The Book</h2>
-        <figure class="lc-cover lc-wide">
-          <img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6ae326bdce53a65ab277bb9f.png" alt="Book cover: Lessons From Life, Pamela Okech" loading="lazy">
-        </figure>
-        <p>Two editions are made.</p>
-        <ul>
-          <li>The family edition is for sharing with relatives and friends, with your parent&rsquo;s portrait on the cover. It is printed on premium paper and bound in hardcover or by hand.</li>
-          <li>The archival edition is printed on museum-quality paper, made to last for generations.</li>
-        </ul>
+        <!-- The book as an object: it turns with the pointer or a drag, and opens on a tap -->
+        <div class="lc-b3d lc-wide">
+          <div class="lc-b3d-stage">
+            <div class="lc-b3d-shadow" aria-hidden="true"></div>
+            <div class="lc-b3d-book" role="img" aria-label="The family edition as a hardcover book: Lessons From Life, Pamela Okech">
+              <span class="lc-b3d-back"></span>
+              <span class="lc-b3d-edge lc-b3d-top"></span>
+              <span class="lc-b3d-edge lc-b3d-bottom"></span>
+              <span class="lc-b3d-edge lc-b3d-fore"></span>
+              <span class="lc-b3d-page">
+                <span class="lc-b3d-page-title">Lessons<br>From Life</span>
+                <span class="lc-b3d-page-author">Pamela Okech</span>
+                <span class="lc-b3d-page-imprint">Mapel Firm</span>
+              </span>
+              <span class="lc-b3d-spine"><span>Lessons From Life</span><span>Pamela Okech</span></span>
+              <span class="lc-b3d-cover">
+                <span class="lc-b3d-cover-out">
+                  <img src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6ae326bdce53a65ab277bb9f.png" alt="" width="1250" height="1850" decoding="async">
+                </span>
+                <span class="lc-b3d-cover-in"></span>
+              </span>
+            </div>
+          </div>
+          <div class="lc-b3d-copy">
+            <p>Two editions are made.</p>
+            <ul>
+              <li>The family edition is for sharing with relatives and friends, with your parent&rsquo;s portrait on the cover. It is printed on premium paper and bound in hardcover or by hand.</li>
+              <li>The archival edition is printed on museum-quality paper, made to last for generations.</li>
+            </ul>
+          </div>
+          <p class="lc-b3d-actions">
+            <button class="lc-b3d-toggle" type="button" aria-expanded="false">Open the book</button>
+            <a class="lc-b3d-read" href="#penmanship-pages" hidden>Read a few of its pages</a>
+          </p>
+        </div>
       </section>
 
       <!-- 4. IMAGE (placeholder) -->
@@ -229,9 +256,9 @@
   </div>
 
   <!-- PRICING: our package and theirs, side by side -->
-  <section class="lc-pricing" id="investment">
+  <section class="lc-pricing" id="investment" aria-labelledby="investment-title">
     <div class="lc-pricing-head">
-      <h2>The Investment</h2>
+      <h2 id="investment-title">The Investment</h2>
       <p>The quality of our service to you speaks for itself.</p>
 
       <div class="lc-compare-scroll" tabindex="0" role="region" aria-label="Price comparison">
@@ -363,6 +390,7 @@
     toggle.setAttribute('aria-expanded', 'false');
     menu.classList.remove('is-open');
     menu.setAttribute('aria-hidden', 'true');
+    menu.inert = true;
     body.classList.remove('menu-open');
   }
 
@@ -371,6 +399,7 @@
     toggle.setAttribute('aria-expanded', 'true');
     menu.classList.add('is-open');
     menu.setAttribute('aria-hidden', 'false');
+    menu.inert = false;
     body.classList.add('menu-open');
   }
 
@@ -442,6 +471,123 @@
       var started = video.play();
       if (started && started.catch) started.catch(function () {});
     });
+  });
+
+  // ─── The book: turns toward the pointer or with a drag, opens on a tap ───
+  document.querySelectorAll('.lc-b3d').forEach(function (wrap) {
+    var stage = wrap.querySelector('.lc-b3d-stage');
+    var book = wrap.querySelector('.lc-b3d-book');
+    var btn = wrap.querySelector('.lc-b3d-toggle');
+    var read = wrap.querySelector('.lc-b3d-read');
+    if (!stage || !book || !btn) return;
+
+    var REST = -26;                       // resting turn, in degrees: cover with the page edges showing
+    var still = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var touch = window.matchMedia('(hover: none)').matches;
+    var open = false, drag = null, moved = false;
+
+    function pose(ry, rx) {
+      wrap.style.setProperty('--ry', ry.toFixed(2) + 'deg');
+      wrap.style.setProperty('--rx', (rx || 0).toFixed(2) + 'deg');
+      // The sheen slides across the cover as the book turns
+      wrap.style.setProperty('--sheen', (50 - ry * 1.6).toFixed(1) + '%');
+    }
+
+    // Open: face the reader, shrink if needed so both halves fit, and centre on the spine
+    function layoutOpen() {
+      var bw = book.offsetWidth, sw = stage.clientWidth;
+      var pad = parseFloat(getComputedStyle(stage).paddingLeft) || 0;
+      var s = Math.min(1, sw / (bw * 2.08));
+      wrap.style.setProperty('--s', s.toFixed(3));
+      wrap.style.setProperty('--tx', (sw / 2 - pad - bw * (1 - s) / 2).toFixed(1) + 'px');
+    }
+
+    function setOpen(next) {
+      open = next;
+      wrap.classList.toggle('is-open', open);
+      wrap.classList.remove('is-tracking');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+      btn.textContent = open ? 'Close the book' : 'Open the book';
+      if (read) read.hidden = !open;
+      if (open) { layoutOpen(); pose(0, 9); }
+      else { wrap.style.setProperty('--s', '1'); wrap.style.setProperty('--tx', '0px'); pose(REST, 0); }
+    }
+
+    wrap.classList.add('is-ready');
+    pose(REST, 0);
+    btn.addEventListener('click', function () { setOpen(!open); });
+    window.addEventListener('resize', function () { if (open) layoutOpen(); });
+
+    if (read) {
+      read.addEventListener('click', function (e) {
+        var target = document.getElementById(read.getAttribute('href').slice(1));
+        if (!target) return;
+        e.preventDefault();
+        var offset = (nav ? nav.offsetHeight : 0) + 24;
+        window.scrollTo({ top: target.getBoundingClientRect().top + window.pageYOffset - offset, behavior: 'smooth' });
+      });
+    }
+
+    // A tap or click on the book opens and closes it; a drag only turns it
+    book.addEventListener('click', function () {
+      if (moved) { moved = false; return; }
+      setOpen(!open);
+    });
+
+    if (still) return;
+
+    // Mouse: the book turns to follow the pointer across the stage
+    stage.addEventListener('pointermove', function (e) {
+      if (open || drag || e.pointerType !== 'mouse') return;
+      var r = stage.getBoundingClientRect();
+      var x = (e.clientX - r.left) / r.width, y = (e.clientY - r.top) / r.height;
+      wrap.classList.add('is-tracking');
+      pose(34 - x * 68, (0.5 - y) * 10);
+    });
+    stage.addEventListener('pointerleave', function () {
+      if (open || drag) return;
+      wrap.classList.remove('is-tracking');
+      pose(REST, 0);
+    });
+
+    // Touch or pen: drag sideways to turn the book; it settles back when let go
+    book.addEventListener('pointerdown', function (e) {
+      if (open) return;
+      drag = { x: e.clientX, ry: parseFloat(wrap.style.getPropertyValue('--ry')) || REST };
+      moved = false;
+    });
+    window.addEventListener('pointermove', function (e) {
+      if (!drag || e.pointerType === 'mouse') return;
+      var dx = e.clientX - drag.x;
+      if (Math.abs(dx) > 6) moved = true;
+      if (!moved) return;
+      wrap.classList.add('is-tracking');
+      pose(Math.max(-55, Math.min(55, drag.ry + dx * 0.45)), 0);
+    });
+    function release() {
+      if (!drag) return;
+      drag = null;
+      wrap.classList.remove('is-tracking');
+      if (!open && moved) pose(REST, 0);
+    }
+    window.addEventListener('pointerup', release);
+    window.addEventListener('pointercancel', release);
+
+    // Touch screens have no hover, so the book turns a little as it scrolls through view
+    if (touch && 'IntersectionObserver' in window) {
+      var seen = false, queued = false;
+      new IntersectionObserver(function (entries) { seen = entries[0].isIntersecting; }).observe(stage);
+      window.addEventListener('scroll', function () {
+        if (!seen || open || drag || queued) return;
+        queued = true;
+        requestAnimationFrame(function () {
+          queued = false;
+          var r = stage.getBoundingClientRect(), vh = window.innerHeight;
+          var t = Math.max(0, Math.min(1, (vh - r.top) / (vh + r.height)));
+          pose(-36 + t * 24, 0);
+        });
+      }, { passive: true });
+    }
   });
 
   // ─── Carousels: the book photos and the book pages ─────

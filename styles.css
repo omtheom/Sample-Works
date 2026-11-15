@@ -17,7 +17,7 @@
     --lc-bg: #FBFAF6;
     --lc-text: #1F1E1D;
     --lc-muted: #5F5D58;
-    --lc-faint: #77746D;
+    --lc-faint: #6C6962;
     --lc-line: #E3DFD5;
     --lc-frame: #EEEBE3;
     --lc-highlight: #F2EFE7;
@@ -289,6 +289,7 @@ nav.is-scrolled {
 
 /* Full-bleed so the page colour fills the GHL section edge to edge */
 .lc-page {
+    overflow-x: clip;
     width: 100vw;
     margin-left: calc(50% - 50vw);
     min-height: 100vh;
@@ -401,6 +402,12 @@ nav.is-scrolled {
 
 .lc-article > .lc-section {
     max-width: none;
+}
+
+.lc-title,
+.lc-section h2,
+.lc-pricing h2 {
+    text-wrap: balance;
 }
 
 .lc-title {
@@ -518,7 +525,14 @@ nav.is-scrolled {
     margin-left: clamp(1.5rem, 3.5vw, 2.75rem);
 }
 
+.lc-book {
+    font-variant-numeric: oldstyle-nums;
+    font-kerning: normal;
+    hanging-punctuation: first;
+}
+
 .lc-book p {
+    text-wrap: pretty;
     margin: 0;
     text-align: justify;
     text-indent: 1.5em;
@@ -530,11 +544,11 @@ nav.is-scrolled {
     text-indent: 0;
 }
 
-.lc-book-page > h4:first-child {
+.lc-book-page > h3:first-child {
     margin-top: 0;
 }
 
-.lc-book h4 {
+.lc-book h3 {
     margin: 2rem 0 1rem;
     font-size: 1em;
     font-style: italic;
@@ -675,15 +689,298 @@ nav.is-scrolled {
     object-fit: contain;
 }
 
-/* The Book cover keeps its own portrait shape, left-aligned; on desktop it is
-   twice its earlier 30rem width, and on phones it fills the screen width */
-.lc-cover img {
+/* ── THE BOOK, AS AN OBJECT ──
+   A hardcover built from the cover image: boards, spine, page edges and a title
+   page. It turns with the pointer or a drag and opens on a tap. Every measure
+   derives from --bw, the book's width. */
+.lc-b3d {
+    display: flex;
+    flex-direction: column;
+    --bw: min(26rem, calc((100vh - 17rem) / 1.48), calc(100vw - 2 * var(--pad-x) - 3.5rem));
+    --bh: calc(var(--bw) * 1.48);
+    --bt: calc(var(--bw) * .1);      /* thickness */
+    --bb: calc(var(--bw) * .008);    /* board */
+    --ov: calc(var(--bw) * .012);    /* how far the boards overhang the pages */
+    --cloth: #283d51;                /* sampled from the cover's edge */
+    --leaf: #F4EFE4;
+    position: relative;
+}
+
+.lc-b3d-stage {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: calc(var(--bh) + 4.5rem);
+    padding-left: calc(var(--bw) * .1);
+    perspective: calc(var(--bw) * 4.2);
+}
+
+.lc-b3d-book {
+    position: relative;
+    flex: none;
+    width: var(--bw);
+    height: var(--bh);
+    transform-style: preserve-3d;
+    transform: translateX(var(--tx, 0px)) scale(var(--s, 1)) rotateX(var(--rx, 0deg)) rotateY(var(--ry, -26deg));
+    transition: transform 1s cubic-bezier(.2, .7, .2, 1);
+    cursor: pointer;
+    touch-action: pan-y;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-tap-highlight-color: transparent;
+}
+
+.lc-b3d.is-tracking .lc-b3d-book {
+    transition-duration: .18s;
+    transition-timing-function: ease-out;
+}
+
+.lc-b3d-book > span {
+    position: absolute;
+    display: block;
+}
+
+.lc-b3d-back {
+    inset: 0;
+    background: var(--cloth);
+    border-radius: 2px;
+    transform: translateZ(calc(var(--bt) / -2));
+}
+
+/* Page edges: fine lines running the length of each edge */
+.lc-b3d-edge {
+    --pt: calc(var(--bt) - 2 * var(--bb));
+    background-color: var(--leaf);
+}
+
+.lc-b3d-fore {
+    top: var(--ov);
+    left: calc(var(--bw) - var(--ov) - var(--pt) / 2);
+    width: var(--pt);
+    height: calc(var(--bh) - 2 * var(--ov));
+    background-image: repeating-linear-gradient(90deg, rgba(0,0,0,0) 0 1.5px, rgba(60,45,20,.16) 1.5px 2px);
+    transform: rotateY(90deg);
+}
+
+.lc-b3d-top,
+.lc-b3d-bottom {
+    left: 0;
+    width: calc(var(--bw) - var(--ov));
+    height: var(--pt);
+    background-image: repeating-linear-gradient(0deg, rgba(0,0,0,0) 0 1.5px, rgba(60,45,20,.16) 1.5px 2px);
+    transform: rotateX(90deg);
+}
+
+.lc-b3d-top {
+    top: calc(var(--ov) - var(--pt) / 2);
+}
+
+.lc-b3d-bottom {
+    top: calc(var(--bh) - var(--ov) - var(--pt) / 2);
+    filter: brightness(.8);
+}
+
+/* The title page, seen when the cover opens */
+.lc-b3d-page {
+    top: var(--ov);
+    left: 0;
+    width: calc(var(--bw) - var(--ov));
+    height: calc(var(--bh) - 2 * var(--ov));
+    display: flex !important;
+    flex-direction: column;
+    align-items: center;
+    padding: 24% 10% 9%;
+    background: var(--leaf) linear-gradient(90deg, rgba(60,45,20,.22), rgba(60,45,20,0) 9%);
+    color: #2A2622;
+    font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
+    text-align: center;
+    transform: translateZ(calc(var(--bt) / 2 - var(--bb) - 1px));
+}
+
+.lc-b3d-page-title {
+    font-size: calc(var(--bw) * .078);
+    line-height: 1.25;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+}
+
+.lc-b3d-page-author {
+    margin-top: 9%;
+    font-size: calc(var(--bw) * .058);
+    font-style: italic;
+}
+
+.lc-b3d-page-imprint {
+    margin-top: auto;
+    font-size: calc(var(--bw) * .034);
+    letter-spacing: .3em;
+    text-transform: uppercase;
+}
+
+.lc-b3d-spine {
+    top: 0;
+    left: calc(var(--bt) / -2);
+    width: var(--bt);
+    height: var(--bh);
+    display: flex !important;
+    align-items: center;
+    justify-content: space-between;
+    padding: 9% 0;
+    writing-mode: vertical-rl;
+    background: var(--cloth) linear-gradient(180deg, rgba(255,255,255,.1), rgba(0,0,0,.18));
+    color: #fff;
+    font-family: 'Jost', 'Futura', 'Century Gothic', sans-serif;
+    font-weight: 500;
+    font-size: calc(var(--bt) * .34);
+    letter-spacing: .16em;
+    line-height: var(--bt);
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform: rotateY(-90deg);
+}
+
+/* The front board swings on the spine */
+.lc-b3d-cover {
+    inset: 0;
+    transform-style: preserve-3d;
+    transform-origin: left center;
+    transform: translateZ(calc(var(--bt) / 2));
+    transition: transform 1.1s cubic-bezier(.3, .6, .2, 1);
+}
+
+.lc-b3d.is-open .lc-b3d-cover {
+    transform: translateZ(calc(var(--bt) / 2)) rotateY(-164deg);
+}
+
+.lc-b3d-cover-out,
+.lc-b3d-cover-in {
+    position: absolute;
+    inset: 0;
+    display: block;
+    overflow: hidden;
+    border-radius: 2px;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.lc-b3d-cover-out {
+    background: var(--cloth);
+}
+
+.lc-b3d-cover-out img {
     display: block;
     width: 100%;
-    max-width: 60rem;
-    height: auto;
-    margin: 0;
-    box-shadow: 0 1px 2px rgba(0,0,0,.08), 0 12px 32px rgba(0,0,0,.12);
+    height: 100%;
+    object-fit: cover;
+}
+
+/* The hinge groove beside the spine, and a sheen that moves as the book turns */
+.lc-b3d-cover-out::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(90deg, rgba(0,0,0,.28) 0, rgba(255,255,255,.14) 1.4%, rgba(0,0,0,.2) 3.4%, rgba(0,0,0,0) 5.5%),
+        linear-gradient(100deg, rgba(255,255,255,0) 35%, rgba(255,255,255,.16) 50%, rgba(255,255,255,0) 65%) var(--sheen, 90%) 0 / 250% 100% no-repeat;
+    pointer-events: none;
+}
+
+/* Endpaper */
+.lc-b3d-cover-in {
+    background: #3c5566 linear-gradient(270deg, rgba(0,0,0,.3), rgba(0,0,0,0) 12%);
+    transform: rotateY(180deg);
+}
+
+.lc-b3d-shadow {
+    position: absolute;
+    left: calc(var(--bw) * .1);
+    top: calc(50% + var(--bh) * var(--s, 1) / 2 - .7rem);
+    width: var(--bw);
+    height: 1.75rem;
+    background: radial-gradient(closest-side, rgba(0,0,0,.42), rgba(0,0,0,0));
+    filter: blur(5px);
+    transform: translateX(var(--tx, 0px)) scaleX(1.05);
+    transition: transform 1s cubic-bezier(.2, .7, .2, 1), top 1s cubic-bezier(.2, .7, .2, 1);
+}
+
+.lc-b3d.is-open .lc-b3d-shadow {
+    transform: translateX(calc(var(--tx, 0px) - var(--bw) * var(--s, 1) / 2)) scaleX(calc(var(--s, 1) * 1.9));
+}
+
+.lc-b3d .lc-b3d-actions {
+    display: none;
+    order: 2;
+    align-items: baseline;
+    gap: 1.75rem;
+    margin: .25rem 0 2rem;
+    font-size: .85em;
+}
+
+.lc-b3d.is-ready .lc-b3d-actions {
+    display: flex;
+}
+
+.lc-b3d-copy {
+    order: 3;
+}
+
+.lc-b3d-toggle {
+    padding: 0 0 .1rem;
+    border: 0;
+    border-bottom: 1px solid currentColor;
+    background: none;
+    color: var(--lc-text);
+    font: inherit;
+    cursor: pointer;
+}
+
+.lc-page .lc-b3d-read {
+    color: var(--lc-muted);
+}
+
+.lc-b3d-read[hidden] {
+    display: none;
+}
+
+.lc-b3d-toggle:focus-visible,
+.lc-b3d-read:focus-visible {
+    outline: 2px solid var(--lc-text);
+    outline-offset: 4px;
+}
+
+/* Wide screens: the book stands on the left, the editions beside it. The stage
+   spans both columns so the opened book has room; the text steps aside for it. */
+@media (min-width: 1100px) {
+    .lc-b3d {
+        --bw: min(30rem, calc((100vh - 17rem) / 1.48), 34vw);
+        display: grid;
+        grid-template-columns: calc(var(--bw) * 1.28) minmax(0, 1fr);
+        column-gap: 2.5rem;
+    }
+
+    .lc-b3d-stage {
+        grid-column: 1 / -1;
+        grid-row: 1;
+    }
+
+    .lc-b3d-copy {
+        grid-column: 2;
+        grid-row: 1;
+        align-self: center;
+        max-width: 26rem;
+        transition: opacity .4s ease, visibility .4s;
+    }
+
+    .lc-b3d.is-open .lc-b3d-copy {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    .lc-b3d .lc-b3d-actions {
+        grid-column: 1 / -1;
+        grid-row: 2;
+        padding-left: calc(var(--bw) * .1);
+    }
 }
 
 /* The Preservation photo fills a 16:9 frame */
