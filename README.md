@@ -22,7 +22,7 @@ Same setup as the main site in Legacy-Codex: one CSS file and one HTML block for
 - Sections: The Filmmaking (landscape video frame), The Penmanship (text), The Book (portrait carousel: two photo frames and one video frame), The Preservation (landscape image frame).
 - The Investment: one table with the deliverables down the left and the providers across the top: three competitors first, Mapel Firm last and shaded. Each column shows a tick or dash per deliverable, with the price in the bottom row. It fits a phone screen without scrolling sideways.
 
-The Book shows the cover as a hardcover built in CSS (boards, spine, page edges, title page). It turns with the pointer or a drag and opens on a tap or with the "Open the book" button; with reduced motion it stays still and opens instantly. To change the book, edit the cover image, spine text and title page text in `custom-block.html`, and the `--cloth` colour in `styles.css` (sampled from the cover's edge). The Preservation photo fills a 16:9 frame. The Filmmaking plays the film in a 16:9 frame.
+The Book shows the cover as a hardcover built in CSS (boards, spine, page edges, title page). It turns with the pointer or a drag and opens on a tap or with the "Open the book" button; with reduced motion it stays still and opens instantly. To change the book, edit the cover image, spine text and title page text in `custom-block.html`, and the `--cloth` colour in `styles.css` (sampled from the cover's edge). The Preservation photo fills a 16:9 frame. The page opens on the film's still, full width, with the title over it; pressing play runs the film there. The contents list numbers the five parts and a hairline fills as the reader scrolls.
 
 ## Competitor prices
 

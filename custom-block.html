@@ -47,6 +47,16 @@
 
 <div class="lc-page" id="lcTop">
 
+  <!-- OPENING: the film's still fills the screen, with the title over it; play runs the film here -->
+  <section class="lc-hero lc-film" aria-labelledby="lcTitle">
+    <video playsinline preload="metadata" poster="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6aecaba942ff25478cd35e90.jpg" src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6aec88f542ff25478ccddfd1.mp4"></video>
+    <div class="lc-hero-text">
+      <p class="lc-meta">Family Legacy Project</p>
+      <h1 class="lc-title" id="lcTitle">What To Expect</h1>
+    </div>
+    <button class="lc-play" type="button" aria-label="Watch the film"><span></span><em aria-hidden="true">Watch the film</em></button>
+  </section>
+
   <div class="lc-layout">
 
     <!-- CONTENTS SIDEBAR -->
@@ -69,16 +79,9 @@
 
     <main class="lc-article">
 
-      <h1 class="lc-title">What To Expect</h1>
-      <p class="lc-meta">Family Legacy Project</p>
-
-      <!-- 1. LANDSCAPE VIDEO -->
+      <!-- 1. THE FILMMAKING (the film itself plays in the opening above) -->
       <section class="lc-section" id="filmmaking">
         <h2>The Filmmaking</h2>
-        <div class="lc-frame lc-frame-landscape lc-wide lc-film">
-          <video playsinline preload="metadata" poster="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6aecaba942ff25478cd35e90.jpg" src="https://assets.cdn.filesafe.space/O8TpO01I8Hm4a859zZMa/media/6aec88f542ff25478ccddfd1.mp4"></video>
-          <button class="lc-play" type="button" aria-label="Play the film"><span></span></button>
-        </div>
         <p>Five sessions of four to five hours each, at the times and in the place that suit your father or mother. Between sessions, our crew quietly follows their day. The film then shows not only what they say, but the life they live.</p>
       </section>
 
@@ -447,6 +450,40 @@
       if (s) observer.observe(s);
     });
   }
+
+  // ─── Reading progress in the contents, and a slow drift on the preservation photo ───
+  (function () {
+    var contentsEl = document.querySelector('.lc-contents');
+    var first = document.getElementById('filmmaking');
+    var last = document.getElementById('investment');
+    var photos = Array.prototype.slice.call(document.querySelectorAll('.lc-photo'));
+    var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var waiting = false;
+    function measure() {
+      waiting = false;
+      var vh = window.innerHeight;
+      if (contentsEl && first && last) {
+        var start = first.getBoundingClientRect().top + window.pageYOffset - vh * 0.4;
+        var end = last.getBoundingClientRect().top + window.pageYOffset - vh * 0.4;
+        var t = (window.pageYOffset - start) / (end - start);
+        contentsEl.style.setProperty('--lc-progress', Math.max(0, Math.min(1, t)).toFixed(3));
+      }
+      if (!calm) {
+        photos.forEach(function (ph) {
+          var r = ph.getBoundingClientRect();
+          if (r.bottom < 0 || r.top > vh) return;
+          ph.style.setProperty('--par', Math.max(0, Math.min(1, (vh - r.top) / (vh + r.height))).toFixed(3));
+        });
+      }
+    }
+    window.addEventListener('scroll', function () {
+      if (waiting) return;
+      waiting = true;
+      requestAnimationFrame(measure);
+    }, { passive: true });
+    window.addEventListener('resize', measure);
+    measure();
+  })();
 
   // ─── Film: the thumbnail and play button give way to the player ───
   document.querySelectorAll('.lc-film').forEach(function (film) {
