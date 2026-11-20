@@ -48,3 +48,15 @@ Files `01` to `04` are lighter copies of photos already linked in the page from 
 ## The Filmmaking sequence
 
 The section's paragraph is told as a film: the screen holds in place while the shots change, and each sentence appears as a caption. The order is set by `data-beats-wide` (desktop, where clips share the screen side by side) and `data-beats-narrow` (a phone held upright, one shot at a time), written as `shot:sentence`. Shots with no link are skipped. Without scripts it is one photo with the paragraph under it; with reduced motion the clips stay still.
+
+## The writing sample page
+
+`reading-block.html` is a second page: the whole writing sample in one column, read by scrolling, with the same nav, theme switch and contents sidebar. The theme a visitor picks carries over between the two pages.
+
+1. Create a new page in GoHighLevel with the path `/writing-sample`.
+2. Paste `styles.css` into its Custom CSS.
+3. Paste `reading-block.html` into a Custom Code element.
+
+The landing page links to it from The Penmanship ("Read the full writing sample") and from the open book. The reading page links back to `/family-legacy#penmanship`. If your landing page has a different path, change `/family-legacy` in `reading-block.html`.
+
+`python3 build.py` rebuilds both previews: `index.html` and `writing-sample.html`.

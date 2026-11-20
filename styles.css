@@ -609,7 +609,8 @@ nav.is-scrolled {
 /* ── BOOK PAGES (Penmanship) ──
    One page at a time: swipe, scroll sideways or use the arrows to turn it.
    The faint rule on the left marks where the website text ends and the book begins. */
-.lc-book.lc-carousel {
+.lc-book.lc-carousel,
+.lc-book.lc-book-flow {
     margin: 3rem 0 1rem;
     font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
     font-size: clamp(1.05rem, .4vw + .95rem, 1.2rem);
@@ -1677,6 +1678,130 @@ nav.is-scrolled {
     font-size: 1.05rem;
     letter-spacing: .14em;
     line-height: 1;
+}
+
+/* ── THE PENMANSHIP EXCERPT ──
+   The opening of the sample fades out and leads to its own page. */
+.lc-book-excerpt .lc-book-viewport {
+    max-height: 26rem;
+    overflow: hidden;
+    -webkit-mask-image: linear-gradient(to bottom, #000 55%, transparent);
+    mask-image: linear-gradient(to bottom, #000 55%, transparent);
+}
+
+.lc-section .lc-read-more {
+    margin: 1.25rem 0 0;
+    padding-left: clamp(1.5rem, 3.5vw, 2.75rem);
+}
+
+.lc-page .lc-read-more a {
+    color: var(--lc-text);
+    text-decoration: none;
+    border-bottom: 1px solid currentColor;
+}
+
+/* ── THE WRITING SAMPLE PAGE ──
+   A second page: the whole sample in one column, read by scrolling. */
+.lc-read-page .lc-layout {
+    padding-top: 9rem;
+}
+
+/* A hairline under the nav that fills as the reader moves through the text */
+.lc-read-progress {
+    position: fixed;
+    z-index: 99;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: transparent;
+    pointer-events: none;
+}
+
+.lc-read-progress span {
+    display: block;
+    height: 100%;
+    background: var(--lc-text);
+    transform: scaleX(var(--lc-progress, 0));
+    transform-origin: left;
+}
+
+.lc-page .lc-read-back,
+.lc-page .lc-read-back-end {
+    color: var(--lc-muted);
+    font-size: .85em;
+    text-decoration: none;
+    border-bottom: 1px solid var(--lc-line);
+    transition: color .2s ease, border-color .2s ease;
+}
+
+.lc-page .lc-read-back {
+    display: inline-block;
+    margin: 0 0 2.5rem;
+}
+
+.lc-page .lc-read-back:hover,
+.lc-page .lc-read-back-end:hover {
+    color: var(--lc-text);
+    border-color: currentColor;
+}
+
+.lc-read-title {
+    font-size: clamp(2.8rem, 4vw + 1.2rem, 5rem);
+}
+
+.lc-page .lc-read-intro {
+    max-width: 34rem;
+    margin: 0 0 3.5rem;
+    line-height: 1.7;
+}
+
+/* The text keeps a printed book's measure */
+.lc-book-flow {
+    max-width: 38rem;
+}
+
+.lc-book-flow .lc-book-viewport {
+    padding-bottom: .5rem;
+}
+
+.lc-book .lc-read-chapter {
+    margin: 3.5rem 0 1.5rem;
+    font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
+    font-size: 1.35em;
+    font-style: italic;
+    font-weight: 400;
+    line-height: 1.3;
+    text-align: center;
+    scroll-margin-top: 7rem;
+}
+
+.lc-book .lc-book-viewport > .lc-read-chapter:first-child {
+    margin-top: 0;
+}
+
+.lc-read-end {
+    max-width: 34rem;
+    margin: 5rem 0 8rem;
+    padding-top: 2.5rem;
+    border-top: 1px solid var(--lc-line);
+}
+
+.lc-read-end > p:first-child {
+    margin: 0 0 2rem;
+    color: var(--lc-muted);
+}
+
+.lc-read-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem 2rem;
+    margin: 0;
+}
+
+.lc-read-actions .lc-apply {
+    margin: 0;
 }
 
 /* ============================================================
