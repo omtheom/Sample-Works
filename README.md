@@ -57,6 +57,6 @@ The section's paragraph is told as a film: the screen holds in place while the s
 2. Paste `styles.css` into its Custom CSS.
 3. Paste `reading-block.html` into a Custom Code element.
 
-The landing page links to it from The Penmanship ("Read the full writing sample") and from the open book. The reading page links back to `/family-legacy#penmanship`. If your landing page has a different path, change `/family-legacy` in `reading-block.html`.
+The landing page links to it from The Penmanship ("Read the full writing sample") and from the open book. The reading page links back to `/sample#penmanship`. If your landing page has a different path, change `/sample` in `reading-block.html`.
 
 `python3 build.py` rebuilds both previews: `index.html` and `writing-sample.html`.
