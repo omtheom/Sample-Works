@@ -64,6 +64,19 @@ body {
     transition: background-color .3s ease, color .3s ease;
 }
 
+html {
+    background: var(--lc-bg);
+}
+
+/* GoHighLevel wraps the page in its own sections, rows and columns, each with
+   a white background. Every wrapper around the page is made see-through so the
+   theme colour shows edge to edge. */
+body :has(.lc-page),
+body :has(.lc-essay-bar) {
+    background: transparent !important;
+    background-image: none !important;
+}
+
 body.menu-open {
     overflow: hidden;
 }
@@ -1703,9 +1716,13 @@ nav.is-scrolled {
 /* ── THE WRITING SAMPLE PAGE ──
    A standalone essay page: the logo and theme switch in a quiet top bar,
    contents on the left, and one column of text. */
+/* Fixed to the window, so it spans the full width whatever GoHighLevel's
+   section padding is */
 .lc-essay-bar {
-    position: sticky;
+    position: fixed;
     top: 0;
+    left: 0;
+    right: 0;
     z-index: 100;
     display: grid;
     grid-template-columns: minmax(13rem, 1fr) minmax(0, 40rem) minmax(1.5rem, 1fr);
@@ -1715,6 +1732,10 @@ nav.is-scrolled {
     padding: 0 var(--pad-x);
     background: var(--lc-bg);
     transition: background-color .3s ease;
+}
+
+.lc-essay-bar .nav-logo-text {
+    white-space: nowrap;
 }
 
 .lc-essay-bar .nav-logo {
@@ -1728,7 +1749,7 @@ nav.is-scrolled {
 
 .lc-essay .lc-layout {
     grid-template-columns: minmax(13rem, 1fr) minmax(0, 40rem) minmax(1.5rem, 1fr);
-    padding-top: 4rem;
+    padding-top: 9rem;
     padding-bottom: 9rem;
 }
 
@@ -1799,7 +1820,7 @@ nav.is-scrolled {
 
     .lc-essay .lc-layout {
         grid-template-columns: minmax(0, 1fr);
-        padding-top: 2.5rem;
+        padding-top: 6.75rem;
     }
 }
 
