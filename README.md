@@ -51,12 +51,12 @@ The section's paragraph is told as a film: the screen holds in place while the s
 
 ## The writing sample page
 
-`reading-block.html` is a second page: the whole writing sample in one column, read by scrolling, with the same nav, theme switch and contents sidebar. The theme a visitor picks carries over between the two pages.
+`reading-block.html` is a standalone reading page: the whole writing sample in one column, read by scrolling. The top bar holds only the logo (which goes to mapelfirm.com) and the theme switch; a contents sidebar on the left lists the two chapters and can be hidden with the ×. There are no other links or buttons. The theme a visitor picks carries over from the landing page.
 
 1. Create a new page in GoHighLevel with the path `/writing-sample`.
 2. Paste `styles.css` into its Custom CSS.
 3. Paste `reading-block.html` into a Custom Code element.
 
-The landing page links to it from The Penmanship ("Read the full writing sample") and from the open book. The reading page links back to `/sample#penmanship`. If your landing page has a different path, change `/sample` in `reading-block.html`.
+The landing page (at `/sample`) links to it from The Penmanship and from the open book.
 
 `python3 build.py` rebuilds both previews: `index.html` and `writing-sample.html`.

@@ -1701,107 +1701,106 @@ nav.is-scrolled {
 }
 
 /* ── THE WRITING SAMPLE PAGE ──
-   A second page: the whole sample in one column, read by scrolling. */
-.lc-read-page .lc-layout {
-    padding-top: 9rem;
-}
-
-/* A hairline under the nav that fills as the reader moves through the text */
-.lc-read-progress {
-    position: fixed;
-    z-index: 99;
+   A standalone essay page: the logo and theme switch in a quiet top bar,
+   contents on the left, and one column of text. */
+.lc-essay-bar {
+    position: sticky;
     top: 0;
-    left: 0;
-    right: 0;
-    height: 2px;
-    background: transparent;
-    pointer-events: none;
+    z-index: 100;
+    display: grid;
+    grid-template-columns: minmax(13rem, 1fr) minmax(0, 40rem) minmax(1.5rem, 1fr);
+    column-gap: 3rem;
+    align-items: center;
+    height: 5rem;
+    padding: 0 var(--pad-x);
+    background: var(--lc-bg);
+    transition: background-color .3s ease;
 }
 
-.lc-read-progress span {
-    display: block;
-    height: 100%;
-    background: var(--lc-text);
-    transform: scaleX(var(--lc-progress, 0));
-    transform-origin: left;
+.lc-essay-bar .nav-logo {
+    grid-column: 1;
 }
 
-.lc-page .lc-read-back,
-.lc-page .lc-read-back-end {
-    color: var(--lc-muted);
-    font-size: .85em;
-    text-decoration: none;
-    border-bottom: 1px solid var(--lc-line);
-    transition: color .2s ease, border-color .2s ease;
+.lc-essay-bar .theme-switch {
+    grid-column: 3;
+    justify-self: end;
 }
 
-.lc-page .lc-read-back {
-    display: inline-block;
+.lc-essay .lc-layout {
+    grid-template-columns: minmax(13rem, 1fr) minmax(0, 40rem) minmax(1.5rem, 1fr);
+    padding-top: 4rem;
+    padding-bottom: 9rem;
+}
+
+.lc-essay .lc-contents {
+    top: 7rem;
+}
+
+.lc-essay-title {
     margin: 0 0 2.5rem;
-}
-
-.lc-page .lc-read-back:hover,
-.lc-page .lc-read-back-end:hover {
-    color: var(--lc-text);
-    border-color: currentColor;
-}
-
-.lc-read-title {
-    font-size: clamp(2.8rem, 4vw + 1.2rem, 5rem);
-}
-
-.lc-page .lc-read-intro {
-    max-width: 34rem;
-    margin: 0 0 3.5rem;
-    line-height: 1.7;
-}
-
-/* The text keeps a printed book's measure */
-.lc-book-flow {
-    max-width: 38rem;
-}
-
-.lc-book-flow .lc-book-viewport {
-    padding-bottom: .5rem;
-}
-
-.lc-book .lc-read-chapter {
-    margin: 3.5rem 0 1.5rem;
     font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
-    font-size: 1.35em;
+    font-size: clamp(3.2rem, 5vw + 1.2rem, 6rem);
+    font-weight: 500;
+    letter-spacing: -.015em;
+    line-height: 1;
+    color: var(--lc-text);
+}
+
+.lc-essay .lc-article .lc-essay-meta {
+    margin: 0 0 5rem;
+    color: var(--lc-muted);
+}
+
+/* Body text: one serif, generous size and leading, left aligned */
+.lc-essay .lc-article p {
+    max-width: 40rem;
+    margin: 0 0 1.6rem;
+    font-size: clamp(1.1rem, .5vw + .95rem, 1.3rem);
+    line-height: 1.85;
+    text-wrap: pretty;
+    hanging-punctuation: first;
+    font-variant-numeric: oldstyle-nums;
+}
+
+.lc-essay .lc-article blockquote {
+    margin: 0 0 1.6rem;
+    padding-left: 1.5rem;
+    border-left: 1px solid var(--lc-line);
+    font-size: clamp(1.1rem, .5vw + .95rem, 1.3rem);
     font-style: italic;
-    font-weight: 400;
-    line-height: 1.3;
-    text-align: center;
+    line-height: 1.85;
+}
+
+.lc-essay-chapter {
+    margin: 4.5rem 0 1.75rem;
+    font-family: 'EB Garamond', Garamond, 'Times New Roman', serif;
+    font-size: clamp(2rem, 1.8vw + 1.4rem, 2.9rem);
+    font-weight: 500;
+    letter-spacing: -.01em;
+    line-height: 1.1;
+    color: var(--lc-text);
     scroll-margin-top: 7rem;
 }
 
-.lc-book .lc-book-viewport > .lc-read-chapter:first-child {
+.lc-essay-meta + .lc-essay-chapter {
     margin-top: 0;
 }
 
-.lc-read-end {
-    max-width: 34rem;
-    margin: 5rem 0 8rem;
-    padding-top: 2.5rem;
-    border-top: 1px solid var(--lc-line);
-}
+@media (max-width: 900px) {
+    .lc-essay-bar {
+        grid-template-columns: auto auto;
+        justify-content: space-between;
+        height: 4.25rem;
+    }
 
-.lc-read-end > p:first-child {
-    margin: 0 0 2rem;
-    color: var(--lc-muted);
-}
+    .lc-essay-bar .theme-switch {
+        grid-column: 2;
+    }
 
-.lc-read-actions {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    gap: 1.5rem 2rem;
-    margin: 0;
-}
-
-.lc-read-actions .lc-apply {
-    margin: 0;
+    .lc-essay .lc-layout {
+        grid-template-columns: minmax(0, 1fr);
+        padding-top: 2.5rem;
+    }
 }
 
 /* ============================================================

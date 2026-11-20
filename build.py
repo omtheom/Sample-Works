@@ -11,7 +11,6 @@ here = Path(__file__).parent
 
 # On the live site the pages link by path; the previews link to each other's files.
 LINKS = {
-    'href="/sample': 'href="index.html',
     'href="/writing-sample': 'href="writing-sample.html',
 }
 
